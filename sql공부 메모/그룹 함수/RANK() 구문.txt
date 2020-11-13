@@ -1,0 +1,23 @@
+RANK() 구문
+RANK() 함수는 그룹필드명으로 그룹을 만들고 정렬필드명으로 정렬해
+같은값이면 중복 순위를 부여하고 그 이후는 해당 순위만큼 이동한 순위를 구한다.
+
+RANK() OVER(PARTITION BY 그룹필드명 ORDER BY 정렬필드명)
+결괏값 수치
+
+사용 예
+RANK() OVER (PARTITION BY class_cd ORDER BY reading_cnt)
+class_cd 그룹을 만들고 reading_cnt 값으로 정렬한 결과를 값이 같으면 
+중복된 순위를 구하고 그 이후는 순위는 해당 순위 개수만큼 이동한 순위를 구한다
+
+
+
+7월 성적 테이블에서 국어 점수를 내림차순 정렬해 같은값이면 중복한 순위를 구하고, 
+다음 순위는 해당 순위만큼 이동한 순위를 구한다
+SELECT *
+FROM tb_grade_07;
+
+SELECT  test_cd,
+        kor,
+        RANK() OVER (ORDER BY kor DESC) AS 순위
+FROM tb_grade_07;

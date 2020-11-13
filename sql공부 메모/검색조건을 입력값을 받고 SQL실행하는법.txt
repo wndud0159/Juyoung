@@ -1,0 +1,32 @@
+검색조건을 입력해서 SQL을 실행
+SQL구문에 ':검색조건명'을 입력하면 실행할 때 조건 입력창에 조건 값을 입력해 검색한다.
+
+필드 = :검색조건명
+
+함수(:검색조건명)
+
+
+사용 예
+WHERE class_cd = :반코드
+:반코드에 A를 입력하면 SQL실행 시 WHERE class_cd = A로 실행한다
+WHERE A필드 = to_date(:생년월일)
+:생년월일을 문자 20190820으로 입력하면 WHWERE A필드 = to_date(20190820) 으로 실행한다
+
+
+
+성적테이블에서 반코드를 :v1 검색조건명으로 설정해 A,D,F를 각각 입력하고 검색한다.
+SELECT *
+FROM tb_grade
+WHERE class_cd = :v1
+ORDER BY class_cd,
+        student_no;
+        
+고객테이블에서 고객명,성별을 검색조건명으로 설정해 고객명조건에 '이'를 입력하고, 성별조건에 'w'를 입력해 검색한다.
+SELECT *
+FROM tb_customer;
+
+SELECT *
+FROM tb_customer tc
+WHERE tc.customer_nm LIKE '%' || :고객명 || '%'
+AND tc.mw_flg = :성별
+

@@ -1,0 +1,12 @@
+사용자기능_함수
+
+CREATE [OR REPLACE] FUNCTION 함수명(매개변수1 형식1,....매개변수n형식n)
+	RETURN 반환형식 IS 변수 변수형식(크기)
+	BEGIN
+		실행 SQL구문 INTO 변수;
+		RETURN (변수);
+		[EXCEPTION 예외처리;]
+	END 함수명;
+	/
+
+DROP FUNCTION 함수명;

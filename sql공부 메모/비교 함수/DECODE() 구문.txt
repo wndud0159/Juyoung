@@ -1,0 +1,25 @@
+DECODE()
+DECODE() 함수는 기준값이 비굣값과 같은면 해당값을 구하고,
+그렇지 않으면 미해당값을 구한다.
+
+DECODE(기준값,비굣값,해당값[,미해당값])
+결괏값 지정 값에 따라 다름
+
+사용 예
+DECODE(mw_flg,'M','남성','여성')
+mw_flg 값이 m이면 남성 아니면 여성으로 반환한다.
+
+
+
+
+고객 테이블에서 성별이 남성이면 '남'으로 바꾸고, 여성이면'여'로 바꾼다 모두해당하지않으면 *로 바꾼다
+SELECT *
+FROM tb_customer;
+
+SELECT  customer_cd,
+        customer_nm,
+        DECODE(mw_flg,'M','남','W','여','*'),
+        birth_day,
+        phone_number,
+        email
+FROM tb_customer;

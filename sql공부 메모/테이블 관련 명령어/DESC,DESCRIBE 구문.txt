@@ -1,0 +1,12 @@
+DESC 와 DESCRIBE 구문
+위 명령들은 지정한 테이블명의 구조를 보여주는 기능으로,
+필드명,데이터형식,데이터크기,공백허용여부 들을 확인한다
+
+DESC | DESCRIBE 테이블명;
+
+사용 예
+DESC tb_customer;
+tb_customer 테이블의 구조를 본다
+
+--2019년 성적테이블의 구조를 확인한다
+DESC tb_grade_2019;

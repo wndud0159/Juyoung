@@ -1,0 +1,82 @@
+INSERT 구문
+지정한 테이블의 필드에 데이터를 입력한다.
+
+INSERT INTO 테이블명 VALUES(값1,값2,값n)
+
+INSERT INTO 테이블명 (필드명1,필드명2,필드명n) VALUES(값1,값2,값n)
+
+INSERT INTO 테이블명
+SELECT 필드명1,...필드명n
+FROM 테이블명
+WHERE 조건식;
+
+INSERT [ALL|FIRST]
+    WHEN 조건식1 THEN INTO 테이블명1
+                .
+                .
+    WHEN 조건식1 THEN INTO 테이블명n
+    ELSE INTO 테이블명x
+SELECT 필드명1,..필드명n
+FROM 테이블명
+WHERE 조건식;
+
+INSERT [ALL|FIRST]
+    WHEN 조건식1 VALUES(필드명1,..필드명n)
+                .
+                .
+    WHEN 조건식1 VALUES(필드명1,..필드명n)
+    ELSE INTO 테이블명n
+SELECT 필드명1,..필드명n
+FROM 테이블명
+WHERE 조건식;
+
+
+
+사용 예
+INSERT INTO 테이블 VALUES(입력값,...)
+테이블의 모든 필드와 일치하는 데이터를 입력한다.VALUES에 지정한 값의 개수가 필드와 같아야 한다는 의미
+
+INSERT INTO 테이블 (필드,....)VALUES(입력값,...)
+필드에 해당하는 데이터만 입력한다. 지정하지 않은 필드는 NULL값을 허용해야한다.
+
+INSERT INTO 테이블 SELECT 검색필드1, 검색필드2,....
+SELECT명령으로 검색한 필드를 지정한 테이블에 바로 입력한다. 이때 SELECT에서 검색하는 필드가
+INSERT명령에 지정한 테이블의 필드 개수와 형식이 같아야 한다.
+
+INSERT [ALL|FIRST]WHEN 조건식 THEN INTO 테이블
+SELECT명령으로 검색한 필드를 조건에 따라 테이블을 달리해 입력한다. 옵션인ALL은 
+조건에 따라 데이터를 입력하고,FIRST는 첫 번째 조건에 만족하면 해당 테이블에 입력하고 뒤에
+조건은 처리하지 않는다.
+
+
+성적테이블에서 전체 학생를 검색한다.
+SELECT *
+FROM tb_grade;
+
+성적테이블에서 a반 3번 독고승재 학생을 입력하여 만든다
+INSERT INTO tb_grade(class_cd, student_no, student_nm, kor, eng, mat)
+VALUES('A', 3, '독고승재', 97, 88, 95);
+
+성적테이블에서 B반 4번 이도희 학생을 입력하여 만든다
+INSERT INTO tb_grade(class_cd, student_no, student_nm, kor, eng, mat)
+VALUES('B', 4, '이도희', 86, 92, 90);
+COMMIT;
+
+SELECT * FROM tb_point;
+SELECT * FROM tb_point_2018;
+SELECT * FROM tb_point_2019;
+
+포인트테이블의 등록일시 앞4자리연도가 '2017'dlaus 2017년 포인트 테이블에 적립내용을 입력
+2018 2019도 동일
+INSERT ALL
+    WHEN SUBSTR(reg_dttm,1,4) = '2017' THEN INTO tb_point_2017
+    WHEN SUBSTR(reg_dttm,1,4) = '2018' THEN INTO tb_point_2018
+    WHEN SUBSTR(reg_dttm,1,4) = '2019' THEN INTO tb_point_2019
+    ELSE INTO tb_point_2019
+SELECT customer_cd,
+    seq_no,
+    point_memo,
+    point,
+    reg_dttm
+FROM tb_point
+WHERE reg_dttm >= '20170101000000';

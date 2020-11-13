@@ -1,0 +1,24 @@
+ROLLBACK
+데이터베이스에서 바뀐 내용을 취소하고 최종 커밋(COMMIT)상태로 돌아간다.
+
+1. 성적 테이블의 전체 내용을 확인한다.
+2. 성적 테이블에서 b반,d반 학생을 삭제한다.
+3. 성적 테이블에서 삭제한 내용을 확인한다.
+4. 성적 테이블의 삭제한 학생 내용을 취소하고 이전 상태로 돌아간다.
+5. 성적 테이블의 삭제한 내용을 복구했는지 확인한다.
+
+1
+SELECT *
+FROM tb_grade;
+2
+DELETE
+FROM tb_grade
+WHERE class_cd IN('B','D');
+3
+SELECT *
+FROM tb_grade;
+4
+ROLLBACK; 한번 더 롤백하면 그전 커밋이 날라가는가?,,,,, 모름
+5
+SELECT *
+FROM tb_grade;

@@ -1,0 +1,23 @@
+DISTINCT 구문
+나열한 필드 값을 중복 없이 구한다.
+
+
+SElECT DISTINCT 검색필드명
+FROM 테이블명
+WHERE 조건식
+
+사용 예
+DISTINCT SALES_MONTH, PRODUCT_NM;
+SALES_MONTH 값과 PRODUCT_NM 값을 중복을 제거해서 같은데이터가 없게 검색한다.
+
+
+
+판매 테이블에서 판매일과 상품명을 중복 없이 검색한다.
+SELECT DISTINCT SALES_DT, PRODUCT_NM
+FROM TB_SALES
+ORDER BY SALES_DT, PRODUCT_NM;
+
+판매 테이블에서 상품명을 중복 없이 검색한다.
+SELECT DISTINCT PRODUCT_NM
+FROM TB_SALES
+ORDER BY PRODUCT_NM;

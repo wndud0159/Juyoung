@@ -1,0 +1,30 @@
+UNION 구문
+테이블명1과 테이블명2에 대한 각 SELECT구문에서 위치별로 각기 대응하는 필드
+중복없는 합집합을 만든다.
+
+SELECT 필드명1,....필드명n
+FROM 테이블명1
+UNION
+SELECT 필드명2,....필드명n
+FROM 테이블명2;
+
+
+사용 예
+SELECT run_dt, trn_no
+FROM tb_train_pln
+UNION
+SELECT run_dt, trn_no
+FROM tb_train_exe;
+tb_train_pln의 run_dt,trn_no값과 tb_train_exe의 run_dt,trn_no 값을 합해 중복없는 1건씩의 데이터를 검색한다.
+
+
+국어점수가 90점이상인 a그룹과 영어점수가 90점이상인 b그룸의 학생명을 중복없는 합집합으로 검색한다.
+SELECT student_nm
+FROM tb_grade
+WHERE kor >= 90
+UNION
+SELECT student_nm
+FROM tb_grade
+WHERE eng >= 90;
+
+a그룹과 b그룹에 모두 있는 서유리, 한찬희 학생은 중복값을 없애고 1건씩 보인다.

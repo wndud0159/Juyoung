@@ -1,0 +1,18 @@
+MONTHS_BETWEEN()
+MONTHS_BETWEEN() 함수는 두 날짜의 개월 차이를 구하는 기능으로,
+매개변수로 입력한 기준일자에서 비교일자를 뺀 개월수를 구한다. 기준일자와 비교일자에는 날짜형식의 문자열이나
+날짜를 입력한다.
+
+MONTHS_BETWEEN(기준일자, 비교일자)
+결괏값 날짜
+
+사용 예
+MONTHS_BETWEEN(SYSDATE, TO_DATE('20190701', 'YYYYMMDD'))
+현재 일시와 2019년7월1일과의 개월 차이를 구한다
+
+
+20191005과 20190820 / 20190703과 20191208 / 현재 일시와 20190701의 개월 차이를 구한다
+SELECT MONTHS_BETWEEN('20191005', '20190820'),
+        MONTHS_BETWEEN('20190703', '20191208'),
+        MONTHS_BETWEEN(SYSDATE, '20190701')
+FROM DUAL;

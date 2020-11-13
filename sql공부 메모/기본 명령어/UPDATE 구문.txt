@@ -1,0 +1,29 @@
+UPDATE
+조건식을 만족하는 데이터의 필드 값을 바꾼다.
+
+UPDATE 테이블명
+SET 필드명1 = 값1, 필드명2 = 값2, 필드명n = 값n
+WHERE 조건식;
+
+사용예
+UPDATE tb_grade 
+SET kor = 89, eng = 92
+WHERE student_no = 2045;
+tb_grade의 student_no가 2045인 학생의 kor필드값을 89로, eng필드값을 92로 바꾼다.
+
+
+성적테이블에서 a반,b반인 학생을 대상으로 국어,영어,수학 점수의 합계과 평균을 계산해 바꾼다.
+UPDATE tb_grade
+SET tot = kor + eng + mat,
+    avg = ROUND((kor + eng + mat)/3.1)
+WHERE class_cd IN('A','B');
+
+SELECT *
+FROM tb_grade;
+성적 테이블에서 모든 학생을 대상으로 국어, 영어, 수학 점수의 합계를 평균을 계산해 바꾼다
+UPDATE tb_grade
+SET tot = kor + eng + mat,
+    avg = ROUND((kor + eng + mat)/3.1)
+WHERE class_cd IN('C', 'D');
+
+COMMIT;

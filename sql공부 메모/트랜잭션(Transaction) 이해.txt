@@ -1,0 +1,69 @@
+--트랜잭션(Transaction) 이해
+--여러 단위 작업을 한 번에 처리하기
+--
+--데이터베이스 작업에서 하나로 묶을 수 있는 업무를 가르킨다
+--
+--작업은 데이터베이스의 입력, 수정, 삭제 등 여러 작업을 포함하며
+--
+--데이터의 무결성을 보장하기 위해 작업 중 오류가 발생하면 작업 전체를 취소하고
+--작업 전 상태로 돌아간다.
+--
+--일반적으로 데이터베이스를 조작하는 응용 프로그램의 일괄 작업에서 연관 테이블 간에
+--맞지 않는 정보 입력을 방지할 목적으로 쓰인다.
+--
+--
+--1. 고객 테이블의 고객코드가 2017042인 고객을 확인한다.
+--2. 포인트 테이블에서 고객코드가 2017042인 고객의 적립내용을 확인한다.
+--3. 포인트 테이블에 고객코드가 2017042인 고객의 신규 포인트 적립 내용을 확인한다.
+--4. 포인트 테이블에서 입력한 포인트 적립 내용을 확인한다.
+--5. 고객 테이블의 누적포인트 값을 포인트 테이블의 포인트 합으로 바꾸는 SQL에서 오류를 발생시켜
+--부정합 상태로 만든다
+--6. 부정합 상태를 롤백하고 이전 상태로 돌아간다
+--
+--정상 종료로 처리하는 두 번쨰 SQL실습은 롤백으로 작업하기 전 상태가 됐으므로 1~4까지 다시한다
+--
+--7. 고객 테이블의 누적포인트 값을 포인트 테이블의 포인트 합으로 바꾼다.
+--8. 고객 테이블의 고객코드가 2017042인 고객을 확인한다.
+--9. 커밋해서 바뀐 값을 데이터베이스에 반영하고 정상 종료한다.
+--트랜잭션은 단일SQL의 구현보다 프로그램에서 일관 작업할 때 사용하므로 여기서는 개념 정도만 이해한다.
+
+
+--1
+SELECT *
+FROM tb_customer
+WHERE customer_cd = '2017042';
+--2
+SELECT *
+FROM tb_point
+WHERE customer_cd = '2017042';
+--3
+INSERT INTO tb_point(customer_cd,seq_no,point_memo,point,reg_dttm)
+VALUES(2017042,5,'드라이기 구매 포인트 적립',3200,'20190801234530');
+--4
+SELECT *
+FROM tb_point
+WHERE customer_cd = '2017042';
+--5
+UPDATE tb_customer cu
+SET cu.total_point = (SELECT SUM(cp.point)
+                    FROM tb_point cp
+                    WHERE cp.customer_cd = cu.customer_cd
+                    GROUP BY cp.customer_cd
+                    )
+WHERE cp.customer_cd = '2017042'; --이게 잘못된 구문 일부러 오류를냄
+--6
+ROLLBACK;
+--7
+UPDATE tb_customer cu
+SET cu.total_point = (SELECT SUM(cp.point)
+                    FROM tb_point cp
+                    WHERE cp.customer_cd = cu.customer_cd
+                    GROUP BY cp.customer_cd
+                    )
+WHERE cu.customer_cd = '2017042'; --이게 잘못된 구문 일부러 오류를냄
+--8
+SELECT *
+FROM tb_customer
+WHERE customer_cd = '2017042';
+--9
+COMMIT;

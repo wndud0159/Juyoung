@@ -1,0 +1,47 @@
+ALTER TABLE 구문
+ALTER TABLE 명령은 테이블 내 필드를 조작하는 명령으로,
+ADD 구문으로 필드를 만들고,
+MODIFY 구문으로 필드의 형식을 바꾸고,
+RENAME COLUMN 구문으로 필드명을 바꾸고,
+DROP COLUMN 구문으로 필드를 삭제한다
+
+ALTER TABLE 테이블명 ADD(필드명[데이터형식]);
+
+ALTER TABLE 테이블명 MODIFY(필드명[데이터형식]);
+
+ALTER TABLE 테이블명 RENAME COLUMN 기존필드명 TO 변경필드명;
+
+ALTER TABLE 테이블명 DROP COLUMN 필드명;
+
+
+
+
+사용 예
+ALTER TABLE tb_grade ADD(his NUMBER(3) NULL);
+tb_grade 테이블에 his 필드를 추가한다.
+
+ALTER TABLE tb_grade MODIFY(tot NUMBER(4) NULL);
+tb_grade테이블에 속한 tot 필드 속성을 바꾼다
+
+ALTER TABLE tb_grade RENAME COLUMN his TO history;
+tb_grade테이블에 속한 his 필드의 이름을 history 필드로 바꾼다
+
+ALTER TABLE tb_grade DROP COLUMN history;
+tb_grade테이블에 history필드를 삭제한다
+
+
+
+1 2019년 성적테이블의 내용과 구조를 검색한다.
+DESC tb_grade_2019;
+2 2019년 성적 테이블의 마지막에 tot와 avg를 추가한다.
+ALTER TABLE tb_grade_2019 ADD(tot NUMBER(5) NULL);
+ALTER TABLE tb_grade_2019 ADD(avg NUMBER(5,1) NULL);
+3 tot와 avg필드의 이름을 m_tot와 m_avg로 바꾼후 자릿수를 바꾼다
+ALTER TABLE tb_grade_2019 RENAME COLUMN tot TO m_tot;
+ALTER TABLE tb_grade_2019 MODIFY(m_tot NUMBER(6));
+
+ALTER TABLE tb_grade_2019 MODIFY(avg NUMBER(6,1));
+ALTER TABLE tb_grade_2019 RENAME COLUMN avg TO m_avg;
+4 m_tot와 m_avg필드를 삭제한다
+ALTER TABLE tb_grade_2019 DROP COLUMN m_tot;
+ALTER TABLE tb_grade_2019 DROP COLUMN m_avg;

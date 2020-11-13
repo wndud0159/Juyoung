@@ -1,0 +1,27 @@
+RANK()WITHIN 구문
+RANK(),,,WITHIN 구문은 GROUP() 함수에서 정렬필드명으로 
+정렬한 값을 기준으로 값이 어디에 위치할 수 있는지를 구한다
+
+RANK(값) WITHIN GROUP(정렬필드명 [ASC|DESC])
+결괏값 수치
+
+사용 예
+RANK(15) WITHIN GROUP(ORDER BY SQNO)
+SQNO 값으로 오름차순 정렬한 상태에서 15의 위치를 구한다
+
+
+
+
+
+
+7월 성적 ㅇ테이블에서 국어 점수를 중복된 순위로 내림차순 정렬해
+96과 90에 해당하는 순위의 위치를 구한다
+SELECT *
+FROM tb_grade_07;
+
+SELECT  RANK(96) WITHIN GROUP(ORDER BY kor DESC) AS "96_위치",
+        RANK(90) WITHIN GROUP(ORDER BY kor DESC) AS "90_위치"
+FROM tb_grade_07;
+
+
+

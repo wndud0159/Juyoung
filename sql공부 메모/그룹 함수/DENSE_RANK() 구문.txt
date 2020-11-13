@@ -1,0 +1,21 @@
+DENSE_RANK() 구문
+DENSE_RANK() 함수는 그룹필드명으로 그룹을 만들고 정렬필드명으로 정렬해
+같은 값이면 중복순위를 부여하고 그 이후는 순차적인 순위를 구한다
+
+DENSE_RANK() OVER (PARTITION BY 그룹필드명 ORDER BY 정렬필드명)
+결괏값 수치
+
+사용 예
+DENSE_RANK() OVER (PARTITION BY class_cd ORDER BY reading_cnt)
+class_cd 그룹을 만들고 readin_cnt 값으로 정렬한 결과의 값이 같은 값이면 중복된
+순위를 구하고, 그 이후로는 다음 순위를 순차적으로 구한다.
+
+
+
+
+7월 성적 테이블에서 국어점수를 내림차순 정렬하고, 같은 값이면 중복 순위를 부여한 후 다음 순위는 
+순차적으로 구한다
+SELECT  test_cd,
+        kor,
+        DENSE_RANK() OVER(ORDER BY kor DESC)AS 순위
+FROM tb_grade_07;

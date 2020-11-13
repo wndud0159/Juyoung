@@ -1,0 +1,26 @@
+사용자 기능_시퀀스
+
+CREATE SEQUENCE 시퀀스명
+    [START WITH 초깃값]
+    [INCREMENT BY 증갓값]
+    [MAXVALUE 최댓값 | NOMAXVALUE]
+    [MINVALUE 최솟값 | NOMINVALUE]
+    [CYCLE | NOCYCLE]
+    [CACHE | NOCACHE]
+    
+
+
+ALTER SEQUENCE 시퀀스명
+    [INCREMENT BY 증갓값]
+    [MAXVALUE 최댓값 | NOMAXVALUE]
+    [MINVALUE 최솟값 | NOMINVALUE]
+    [CYCLE | NOCYCLE]
+    [CACHE | NOCACHE]
+    
+    
+ 
+ 시퀀스명.CURRVAL
+ 
+ 시퀀스명.NEXTVAL
+ 
+ DROP SEQUENCE 시퀀스명;

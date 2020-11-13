@@ -1,0 +1,20 @@
+NVL() 구문
+NVL() 함수는 기준값이 NULL값이면 특정값을 구하고,
+아니면 기준값을 구한다.
+
+NVL(기준값,특정값)
+결괏값 지정 값에 따라 다름
+
+사용 예
+NVL(reg_dt, TO_CHAR(SYSDATE, 'YYYYMMDD'))
+reg_dt 값이 NULL이 아니면 reg_dt 값을 구하고, NULL이면 현재 일시를 YYYYMMDD 형식으로 구한다.
+
+
+고객테이블에서 전화번호에 값이 없으면 xxx-xxxx-xxxx를 보이고 그렇지 않으면 기존 전화번호로 검색한다
+SELECT *
+FROM tb_customer;
+
+SELECT  customer_cd,
+        customer_nm,
+        NVL(phone_number,'xxx-xxxx-xxxx')
+FROM tb_customer;

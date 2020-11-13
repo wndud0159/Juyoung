@@ -1,0 +1,64 @@
+JOIN 구문
+2개 이상 테이블의 연관 정보를 구한다.
+
+
+SElECT 검색필드명
+FROM 테이블명1
+JOIN 테이블명2
+ON 테이블명1(별명1).필드명1 = 테이블명2(별명2).필드명1
+AND 테이블명1(별명1).필드명2 = 테이블명2(별명2).필드명2
+WHERE 조건식;
+
+SELECT 검색필드명
+FROM 테이블명1(별명),
+     테이블명2(별명)
+WHERE 테이블명1(별명1).필드명1 = 테이블명2(별명2).필드명1(+);
+
+사용 예
+SELECT A.TEST_CD, B.TEST_NM
+FROM TB_GRADE A
+JOIN TB_CLASS_CD B
+ON A.TEST_CD = B.TEST_CD;
+TB_GRADE의 TEST_CD와 TB_CLASS_CD의 TEST_CD를 연관 검색해
+TB_GRADE의 TEST_CD, TB_CLASS_CD의 TEST_NM을 보인다
+
+
+성적테이블의 반코드와 반정보테이블의 반코드를 연관 검색해 반이름을 구한다.
+SELECT * B.CLASS_NM,
+    A.STUDENT_NO,
+    A.STUDENT_NM,
+    A.KOR,
+    A.ENG,
+    A.MAT,
+    A.TOT,
+    A.AVG
+FROM TB_GRADE A
+JOIN TB_CLASS_INFO B
+ON A.CLASS_CD = B.CLASS_CD;
+
+SELECT *
+FROM TB_GRADE;
+SELECT *
+FROM TB_CLASS_INFO;
+
+8월 성적 테이블과 9월성적테이블을 연관 검색해 두 테이블에 공통적인 시험 코드를 보인다
+SELECT *
+FROM tb_grade_08 A
+JOIN tb_grade_09 B
+ON a.test_cd = b.test_cd;
+
+8월 성적 테이블과 9월 성적 테이블을 연관 검색해서 9월 성적 테이블의 데이터는 모두 보이고,
+8월 성적 테이블의 데이터는 9월 성적 테이블의 시험코드와 같으면 보인다
+SELECT * 
+FROM tb_grade_08 A
+RIGHT JOIN tb_grade_09 B RIGHT JOIN 을 이용해서 9월성적은 다 보이게하였다
+ON a.test_cd = b.test_cd ;
+SELECT *
+FROM tb_grade_08;
+
+8월 성적 테이블과 9월 성적 테이블을 연관 검색해 두 테이블의 데이터를 모두 보이고,
+두 테이블에 상호 연관되지 않는 데이터는 공백으로 보이게 한다.
+SELECT *
+FROM tb_grade_08 A
+FULL OUTER JOIN TB_GRADE_09 B  FULL OUTER JOIN 을 사용해서 연관되지 않는 데이터는 공백으로 보이게 하였다
+ON a.test_cd = b.test_cd;

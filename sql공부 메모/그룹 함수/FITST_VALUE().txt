@@ -1,0 +1,24 @@
+FIRST_VALUE() 구문
+FIRST_VALUE() 함수는 그룹필드명으로 그룹을 만들고 정렬필드명으로 정렬한
+필드명의 첫 번째 위치값을 구한다
+
+FIRST_VALUE(필드명) OVER(PARTITION BY 그룹필드명 ORDER BY 정렬필드명)
+결괏값 지정한 값에 따라 다름
+
+사용 예
+FIRST_VALUE(kor) OVER (PARTITION BY class_cd ORDER BY kor DESC)
+class_cd 그룹을 만들고 kor 값을 내림차순으로 정렬한 결과의
+가장 처음 값을 구한다 내림차순 정렬한 상태이므로 가장 큰 값을 구한다.
+
+
+
+성적 테이블에서 반코드로 그룹을 만들고 국어점수를 내림차순 정렬해 국어 점수의 첫번째 값을 구한다
+SELECT *
+FROM tb_grade;
+
+SELECT  class_CD,
+        student_no,
+        student_nm,
+        kor,
+        FIRST_VALUE(kor) OVER (PARTITION BY class_cd ORDER BY kor DESC)AS 반별최대점수
+FROM tb_grade;

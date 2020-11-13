@@ -1,0 +1,32 @@
+SUBSTR(), SUBSTRB()
+위 두개의 함수는 문자열의 일부를 구하는 기능으로,
+매개변수로 입력한 문자열의 시작위치부터 취득개수만큼의 문자를 구한다.
+
+SUBSTR(문자열,시작위치[,취득개수])
+SUBSTRB(문자열,시작위치[,취득개수])
+결괏값 문자
+
+SUBSTR('오라클 Example', 1, 3)
+오라클 Example 에서 1부터 3개문자인 오라클을 구한다
+SUBSTRB('오라클 Example', 1, 6)
+오라클 Example에서 1에서부터 6개 문자인 오라클을 구한다
+o 이 함수는 1글자의 자릿수를 2자리로 인식하기 떄문에 그렇다
+
+
+ 1Day SQL Example : 123 : 오라클 문자열에서 처음부터 8개 문자를 substr함수로 구한다
+SELECT SUBSTR('1Day SQL EXAMPLE : 123 : 오라클', 1, 8)
+FROM DUAL;
+
+고객 테이블에서 전화번호 4번째 위치의 문자가 가 아닌 고객을 검색한다
+SELECT *
+FROM tb_customer
+WHERE SUBSTR(phone_number,4 , 1) <> '';
+
+20190820 문자열을 20190820 으로 바꾼다
+SELECT  SUBSTR(S1.dt, 1, 4) ||''||
+        SUBSTR(S1.dt, 5, 2) ||''||        
+        SUBSTR(S1.dt, 7, 2) AS DT_FMT
+FROM(
+    SELECT '20190820' AS DT
+    FROM DUAL
+    )S1;

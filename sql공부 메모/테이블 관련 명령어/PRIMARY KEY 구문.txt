@@ -1,0 +1,44 @@
+PRIMARY KEY
+기본키는 데이터의 유일성을 보장하는 필드의 모음으로,
+중복을 허용하지 않는다.
+
+
+ALTER TABLE 명령에 ADD(CONSTRAINT...) 구문으로 기본키를 설정하고, DROP CONSTRAINT 구문으로 기본키를 삭제한다
+
+ALTER TABLE 테이블명 ADD(CONSTRAINT 기본키명 PRIMARY KEY (필드명1,...필드명n));
+
+ALTER TABLE 테이블명 DROP CONSTRAINT 기본키명;
+
+
+
+
+사용 예
+ALTER TABLE tb_test ADD(CONSTRAINT pk_test PRIMARY KEY(test_cd,SQNO))
+
+tb_test 테이블에 test_cd와 SQNO 필드로 구성된 pk_test기본키를 만든다
+이때 tb_test테이블에는 test_cd와 SQNO 값이 중복될 수 없다.
+
+
+ALTER TABLE tb_test DROP CONSTRAINT pk_test
+
+tb_test 테이블의 pk_test 기본키를 삭제한다
+
+
+
+
+
+1. 2020년 성적테이블의 기존 기본키를 확인하고 삭제한다
+SELECT  a.constraint_name,
+        a.constraint_type,
+        a.table_name,
+        b.position,
+        b.column_name
+FROM    SYS.user_constraints a,
+        SYS.user_cons_columns b
+WHERE a.constraint_name = b.column_name
+AND    a.table_name = 'tb_grade_2020'
+AND    a.constraint_type = 'p';
+
+ALTER TABLE tb_grade_2020 DROP CONSTRAINT pk_tb_grade_2020;
+2. 2020년 성적테이블의 기본키를 만든다
+ALTER TABLE tb_grade_2020 ADD(CONSTRAINT pk_tb_grade_2020_p1 PRIMARY KEY(test_month,test_cd));

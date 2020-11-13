@@ -1,0 +1,49 @@
+MERGE
+조건에 따라 지정한 테이블의 데이터를 입력하거나 수정한다.
+
+MERGE INTO 입력/수정할 테이블명
+    USING (테이블명|뷰|서브쿼리)
+    ON 조건식
+    WHEN MATCHED THEN
+        UPDATE SET 필드명1 = 값1,..필드명n = 값n
+    WHEN NOT MATCHED THEN
+        INSERT...VALUES 구문;
+      
+ 사용 예       
+MERGE INTO tb_point
+USING tb_point_new
+ON 조건식
+WHEN 매칭 THEN UPDATE...
+WHEN 언매칭 THEN INSERT....;
+tb_point_new의 조건식에 따라 조건에 맞족하는 데이터가 있다면 tb_point에 UPDATE작업을 실행하고,
+데이터가 없다면 tb_point에 INSERT 작업을 실행한다
+
+1. 고객 테이블의 전체 내용을 확인
+2. 추가고객 테이블의 전체 내용을 확인
+3. 고객 테이블의 고객코드가 추가고객 테이블에 없다면 고객테이블에 신규고객르로 입력하고,
+4. 있다면 기존고객정보를 바꾼다
+5. 고객 테이블의 바뀐내용을 확인
+6. 고객 테이블의 바뀐 내용을 데이터베이스에 반영한다
+
+1
+SELECT * FROM tb_customer;
+2
+SELECT * FROM tb_add_customer;
+3
+MERGE INTO tb_customer cu
+    USING tb_add_customer nc
+    ON (cu.customer_cd = nc.customer_cd)
+    WHEN MATCHED THEN
+        UPDATE SET cu.customer_nm = nc.customer_nm,
+            cu.mw_flg = nc.mw_flg,
+            cu.birth_day = nc.birth_day,
+            cu.phone_number = nc.phone_number
+    WHEN NOT MATCHED THEN
+        INSERT (cu.customer_cd, cu.customer_nm, cu.mw_flg, cu.birth_day,
+            cu.phone_number, cu.email, cu.total_point, cu.reg_dttm)
+            VALUES(nc.customer_cd, nc.customer_nm, nc.mw_flg, nc.birth_day,
+            nc.phone_number, '', 0, '20191015082030');
+4
+SELECT * FROM tb_customer;
+5
+COMMIT;

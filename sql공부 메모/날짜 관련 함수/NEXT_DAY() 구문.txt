@@ -1,0 +1,24 @@
+NEXT_DAY() 구문
+NEXT_DAY() 함수는 지정일 이후의 날짜를 구하는 기능으로,
+매개변수로 입력한 기준일자 이후
+요일문자열(또는 요일번호)에 해당하는 요일의 날짜를 구한다.
+
+NEXT_DAY(기준일자,요일문자열(또는 요일번호))
+결괏값 날짜
+
+
+사용 예
+NEXT_DAY(SYSDATE, '수요일')
+현재일시 이후 수요일에 대한 날짜를 구한다.
+
+
+2019년8월20일 이후 금요일 날짜를 구한다
+SELECT TO_CHAR(NEXT_DAY('20190820', '금요일'), 'YYYY/MM/DD') AS NEXT_DAY
+FROM DUAL;
+
+SELECT TO_CHAR(NEXT_DAY('20190820', '6'), 'YYYY/MM/DD') AS NEXT_DAY
+FROM DUAL;
+
+2019년8월20일 이후 월요일 날짜를 구한다
+SELECT TO_CHAR(NEXT_DAY('20190820', '월요일'), 'YYYY/MM/DD') AS NEXT_DAY
+FROM DUAL;

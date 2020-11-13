@@ -1,0 +1,65 @@
+CASE 구문
+조건에 만족하는 결괏값을 반환한다.
+
+
+CASE 조건대상 WHEN 비굣값1 THEN 결과1
+            WHEN 비굣값2 THEN 결과2
+                    .
+                    .
+            WHEN 비굣값n THEN 결과n
+END
+
+CASE WHEN 비굣값1 THEN 결과1
+    WHEN 비굣값2 THEN 결과2
+                .
+                .
+    WHEN 비굣값n THEN 결과n
+    ELSE 결과가 없을 때
+END
+
+사용 예
+CASE DAY_CD WHEN '1' THEN '일요일'
+            WHEN '2' THEN '평일'
+            ELSE 'X'
+END
+DAY_CD 가 1이면 일요일을 구하고, 2이면 평일을 구하고, 해당하지 않으면 X를 구한다.
+
+
+성적 테이블의 국어, 영어, 수학 점수가 91에서 100이면 수, 80에서 89이면 우,
+70에서 79이면 미, 60에서 69이면 양, 59이하는 가로 바꾼다
+SELECT CLASS_CD,
+    STUDENT_NO,
+    STUDENT_NM,
+CASE    WHEN KOR >= 90 AND KOR <= 100 THEN '수'
+        WHEN KOR >= 80 AND KOR <= 89 THEN '우'
+        WHEN KOR >= 70 AND KOR <= 79 THEN '미'
+        WHEN KOR >= 60 AND KOR <= 69 THEN '양'
+        WHEN KOR < 60 THEN '가'
+        END AS KOR,  비교연산자로 국어점수의 범위를 비교한다.
+CASE    WHEN ENG BETWEEN 90 AND 100 THEN '수'
+        WHEN ENG BETWEEN 80 AND 89 THEN '우'
+        WHEN ENG BETWEEN 70 AND 79 THEN '미'
+        WHEN ENG BETWEEN 60 AND 69 THEN '양'
+        ELSE '가'
+        END AS ENG,  BETWEEN...END로 영어 점수의 범위를 비교한다
+CASE    WHEN MAT IN(90,91,92,93,94,95,96,97,98,99,100)THEN '수'
+        WHEN MAT IN(80,81,82,83,84,85,86,87,88,89)THEN '우'
+        WHEN MAT IN(70,71,72,73,74,75,76,77,78,79) THEN '미'
+        WHEN MAT IN(60,61,62,63,64,65,66,67,68,69) THEN '양'
+        ELSE '가'
+        END AS MAT,  IN(필드1,필드2 ...) 으로 수학점수의 범위를 비교한다
+        TOT,
+        AVG
+        FROM TB_GRADE;
+        
+ 성적 테이블의 반코드가 A이면 종합입시반 B이면 단과반 C이면 대학편입반 D 이면 일반인반으로 바꾼다
+SELECT 
+CASE class_cd   WHEN 'A' THEN '종합입시반'
+                WHEN 'B' THEN '단과반'
+                WHEN 'C' THEN '대학편입반'
+                WHEN 'D' THEN '일반인반'
+                END
+                class_nm,
+                student_no,
+                student_nm
+FROM tb_grade

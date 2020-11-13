@@ -1,0 +1,26 @@
+LENGTH(), LENGTHB()
+위 함수들은 문자열의 길이를 구하는 기능으로,
+매개변수로 입력 한 문자열의 길이를 구한다.
+NULL값이면 길이는 0이고, 공백(' ')문자는 1의 길이를 갖는다.
+둘의 차이는 1글자의 길이를 1자리로,
+1글자의 길이를 2자리로 ok?
+
+LENGTH(문자열)
+LENGTHB(문자열)
+결괏값 수치
+
+사용 예
+LENGTH('abcd')
+abcd의 자릿수인 4를 구한다.
+LENGTHB('abcd')
+abcd의 자릿수인 8을 구한다.
+
+기타정보 테이블에서 영문고객명의 길이를 LENGTH()함수로 검색한다.
+SELECT *
+FROM tb_etc_info;
+
+SELECT  customer_cd,
+        customer_eng_nm,
+        LENGTH(customer_eng_nm) AS 길이,
+        item_list
+FROM tb_etc_info; 

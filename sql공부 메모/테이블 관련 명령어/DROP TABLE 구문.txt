@@ -1,0 +1,28 @@
+DROP TABLE
+이 명령은 테이블을 삭제하는 기능으로,
+CASCADE CONSTRAINTS 구문으로 제약조건을 함께 삭제하고,
+PURGE 구문은 테이블을 완전히 삭제한다.
+
+DROP TABLE 테이블명[CASCADE CONSTRAINTS];
+
+DROP TABLE 테이블명 PURGE;
+
+FLASHBACK TABLE 테이블 TO BEFORE DROP;
+
+PURGE RECYCLEBIN;
+
+
+
+사용 예
+
+DROP TABLE tb_test CASCADE CONSTRAINTS
+tb_test 테이블을 삭제하면서 제약조건(기본키,인덱스)을 함께 삭제한다.
+
+DROP TABLE tb_test PURGE
+tb_test 테이블의 복구정보를 만들지 않고 완전히 삭제한다.
+
+FLASHBACK TABLE tb_test TO BEFORE DROP
+삭제한 tb_test 테이블을 삭제 전 상태로 복구한다
+
+PURGE RECYCLEBIN
+테이블 복구 정보가 있는 휴지통을 삭제한다

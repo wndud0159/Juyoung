@@ -1,0 +1,25 @@
+OR 구문
+지정한 테이블에서 나열한 조건에 하나라도 만족하는 데이터를 검색하고,
+모두 만족하지 않으면 검색하지 않는다.
+
+
+ SELECT 검색필드명
+ FROM   테이블명
+ WHERE  조건식1 OR 조건식2 OR ''''조건식n;
+
+사용 예
+WHERE MW_FLG = 'M' OR BIRTH_DAY = '20200301'
+성별이 남자 이거나 OR 생년월일이 20200301 인 데이터를 출력
+
+
+ 생년월일이 19900101이후 이거나 or 포인트가 20000이상인 데이터 전체 출력 (둘중 하나만 true여도 값이 데이터 출력)
+SELECT *
+FROM TB_CUSTOMER
+WHERE BIRTH_DAY >= '19900101'
+OR TOTAL_POINT >= 20000;
+
+ 생년월일이 19700101이전 이거나 or 포인트가 20000이상인 데이터 전체 출력
+SELECT *
+FROM TB_CUSTOMER
+WHERE BIRTH_DAY < '19700101'
+OR TOTAL_POINT >= 20000;

@@ -1,0 +1,55 @@
+GROUP BY 구문
+나열한 필드를 기준으로 데이터를 묶어준다.
+
+
+SElECT 검색필드명
+FROM 테이블명
+WHERE 조건식
+GROUP BY 필드명1, 필드명2, 필드명n
+HAVING 그룹 내 조건식;
+
+사용 예
+GROUP BY CLASS_CD, STUDY_GRP
+CLASS값으로 묶은 데이터 그룹을 다시 STUDY_GRP 값으로 묶는다
+
+SELECT MAX(KOR) ... GROUP BY CLASS_CD
+CLASS_CD 그룹을 만들어 KOR 값의 최댓값을 구한다
+
+
+성적 테이블에서 반코드 그룹을 검색한다.
+SELECT CLASS_CD
+FROM TB_GRADE
+GROUP BY CLASS_CD;
+
+성적 테이블에서 반코드 그룹을 만들어 국어점수의 합계, 평균, 최솟값, 최댓값 개수를 구한다.
+SELECT CLASS_CD,
+SUM(KOR), 합계
+AVG(KOR), 평균
+MIN(KOR), 최솟값
+MAX(KOR), 최댓값
+COUNT(*)  개수
+FROM TB_GRADE
+GROUP BY CLASS_CD;
+
+ 성적 테이블에서 반코드 그룹을 만들고 국어,영어,수학 점수의 합계와 평균을 구한다.
+SELECT CLASS_CD,
+SUM(KOR),
+SUM(ENG),
+SUM(MAT),
+ROUND (AVG(KOR),1),  ROUND 함수를 이용해서 소숫점 2자리에서 반올림했다.
+ROUND (AVG(ENG),1),
+ROUND (AVG(MAT),1)
+FROM TB_GRADE
+GROUP BY CLASS_CD;
+
+성적 테이블에서 반코드 그룹을 만들고 국어,영어,수학 점수의 합계와 평균을 구하되 국어 점수의 평균이 80점이상이면 검색한다.
+SELECT CLASS_CD,
+SUM(KOR),
+SUM(ENG),
+SUM(MAT),
+AVG(KOR),
+AVG(ENG),
+AVG(MAT)
+FROM TB_GRADE
+GROUP BY CLASS_CD
+HAVING AVG(KOR) >= 80;

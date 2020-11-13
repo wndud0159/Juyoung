@@ -1,0 +1,17 @@
+ROWNUM 구문
+레코드를 검색할 때 생성되는 행 번호를 구한다.
+
+
+고객 테이블의 전체 행 번호를 검색한다.
+SELECT ROWNUM,
+    customer_cd,
+    customer_nm,
+    mw_flg,
+    birth_day
+FROM tb_customer;
+
+고객테이블에서 남성인 고객을 행 번호와 함께 검색해 고객명으로 정렬한다
+SELECT ROWNUM, A.*
+FROM tb_customer A
+WHERE mw_flg = 'M'
+ORDER BY customer_nm;

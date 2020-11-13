@@ -1,0 +1,53 @@
+INDEX
+인덱스는 데이터베이스를 빠르게 조작하려고 만든 색인표로,
+정보를 쉽게 찾을 수 있는 필드로 구성한다
+CREATE INDEX 명령으로 인덱스를 만들고
+ALTER INDEX...RENAME 명령으로 인덱스명을 바꾸고,
+DROP INDEX 명령으로 인덱스를 삭제한다.
+
+
+CREATE [UNIQUE] INDEX 인덱스명 ON 테이블명(필드명1,...필드명n);
+
+ALTER INDEX 현재인덱스명 RENAME TO 신규인덱스명;
+
+DROP INDEX 인덱스명;
+
+
+
+사용 예
+CREATE INDEX idx_test ON tb_test(test_cd,SQNO)
+tb_test 테이블에 test_cd와 SQNO필드로 쉽게 데이터 조작할 수 있게 idx_test 인덱스를 만든다
+UNIQUE로 인덱스의 필드 값을 중복 없이 만든다
+
+ALTER INDEX idx_test RENAME TO idx_exam
+idx_test 인덱스명을 idx_exam 으로 변경한다
+
+DROP INDEX idx_exam
+idx_exam을 삭제한다
+
+
+
+
+
+
+1. 2019성적테이블에 시험월 시험코드와 국어,영어,수학 점수로 구성된 3개의 인덱스를 만든다
+SELECT  index_name,
+        column_name,
+        column_position,
+        CHAR_LENGTH,
+        DESCEND
+FROM user_ind_columns
+WHERE TABLE_NAME = 'tb_grade_2019';
+
+
+CREATE INDEX idx_kor_score ON tb_grade_2019(test_month,test_cd,kor);
+CREATE INDEX idx_eng_score ON tb_grade_2019(test_month,test_cd,eng);
+CREATE INDEX idx_mat_score ON tb_grade_2019(test_month,test_cd,mat);
+2. 2019년 성적테이블에 만든 3개의 인덱스명을 바꾼다
+ALTER INDEX idx_kor_score RENAME TO idx_kor_grade;
+ALTER INDEX idx_eng_score RENAME TO idx_eng_grade;
+ALTER INDEX idx_mat_score RENAME TO idx_mat_grade;
+3. 2019년 성적테이블에 만든 3개의 인덱스를 삭제한다.
+DROP INDEX idx_kor_grade;
+DROP INDEX idx_eng_grade;
+DROP INDEX idx_mat_grade;

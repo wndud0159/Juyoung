@@ -1,0 +1,27 @@
+SYSDATETO_CHAR()
+TO_CHAR()함수는 날짜를 날짜형식의 형식화된 문자로 바꾸는 기능으로,
+매개변수에 입력하는 날짜는 현재일자를 구하는 SYSDATE 또는 문자형 날짜를 변환해 사용하기도 한다.
+
+
+TO_CHAR(날짜[,날짜형식])
+결괏값 문자
+
+
+사용 예
+TO_CHAR(SYSDATE, 'YYYYMMDD')
+현재 일시를 YYYYMMDD의 형식의 문자로 바꾼다
+TO_CHAR(SYSDATE, 'YYYYMMDD HH24:MI:SS')
+현재 일시를 YYYYMMDD HH24:MI:SS의 형식의 문자로 바꾼다
+
+
+현재일시를 YYYYMMDD 형식의 문자로 바꾼다
+SELECT TO_CHAR(SYSDATE, 'YYYYMMDD') AS TODAY
+FROM DUAL;
+
+현재일시를 12시간 기준으로 YYYY/MM/DD HH:MI:SS 형식의 문자로 바꾼다
+SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH:MI:SS')AS TODAY_TM
+FROM DUAL;
+
+현재일시를 12시간 기준으로 YYYY/MM/DD HH24:MI:SS 형식의 문자로 바꾼다
+SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:MI:SS')AS TODAY_TM
+FROM DUAL;

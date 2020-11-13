@@ -1,0 +1,23 @@
+SELECT 구문
+SELECT 명령은 SELECT 필드명 FROM 테이블명 형식으로 필드 전체나 일부를 검색한다.
+
+
+ *을 사용하여 TB_CUSTOMER 테이블의 전체목록을 출력
+SELECT *
+FROM TB_CUSTOMER;
+
+
+ TB_CUSTOMER 테이블 에서 CD, NM, NUMBER, EMAIL 을 출력
+SELECT CUSTOMER_CD,
+       CUSTOMER_NM,
+       PHONE_NUMBER,
+       EMAIL
+FROM TB_CUSTOMER;
+
+
+AS 를 사용하여 필드 별명을 주었다. 이때 AS는 생략할 수 있다.
+SELECT CUSTOMER_CD AS "코드번호",
+       CUSTOMER_NM AS "고객명",
+       MW_FLG AS "성별",
+       PHONE_NUMBER AS "전화 번호"
+FROM TB_CUSTOMER;

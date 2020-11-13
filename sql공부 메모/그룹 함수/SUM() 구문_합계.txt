@@ -1,0 +1,10 @@
+SUM() 구문
+SUM() 함수는 그룹으로 만든 필드명의 합계을 구한다
+
+SUM(필드명)
+SUM(필드명) OVER (PARTITION BY 그룹필드명)
+결괏값 지정 값에 따라 다름
+
+사용 예
+SUM(kor) OVER (PARTITION BY class_cd)
+class_cd 그룹을 만들고 kor필드의 합계을 구한다

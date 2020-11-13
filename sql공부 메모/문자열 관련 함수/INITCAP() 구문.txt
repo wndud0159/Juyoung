@@ -1,0 +1,15 @@
+INITCAP()
+INITCAP() 함수는 영단어의 첫 문자를 대문자로 바꾸고 나머지는 소문자로 바꾸는기능,
+
+INITCAP(영문자)
+결괏값 문자
+
+사용 예
+INITCAP('SQL example')
+Sql Example 로 바꾼다
+첫 문자가 영문자일 때만 해당한다.
+
+SELECT  customer_cd,
+        INITCAP(customer_eng_nm) AS name,
+        item_list
+FROM tb_etc_info;

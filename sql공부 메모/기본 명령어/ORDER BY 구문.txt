@@ -1,0 +1,35 @@
+ORDER BY 구문
+나열한 필드를 기준으로 데이터를 정렬한다.
+
+
+SElECT 검색필드명
+FROM 테이블명
+WHERE 조건식
+ORDER BY 필드명1[ASC|DESC], 필드명2[ASC|DESC], 필드명n[ASC|DESC]
+
+SElECT 검색필드명
+FROM 테이블명
+WHERE 조건식
+ORDER BY 필드번호1[ASC|DESC], 필드번호2[ASC|DESC], 필드번호n[ASC|DESC]
+
+사용 예
+ORDER BY CLASS_CD, CLASS_NO
+CLASS_CD 값으로 오름차순 정렬하고 같은값의 그룸에서 CLASS_NO 값으로 오름차순 정렬
+
+ORDER BY TOTAL_POINT DESC, CUSTOMER_NM
+TOTAL_POINT 값으로 내림차순 정렬하고 같은 값의 그룹에서 CUSTOMER_NM 값으로 오름차순 정렬
+
+ORDER BY 2 DESC, 4
+2번째 출력 필드 값으로 내림차순 정렬하고 같은 값의 그룹에서 4번째 출력 필드 값으로 오름차순 정렬
+
+
+ 고객 테이블에서 성별로 내림차순 정렬한 결과를 다시 고객명으로 오름차순해서 검색
+SELECT *
+FROM TB_CUSTOMER
+ORDER BY MW_FLG DESC, CUSTOMER_NM;
+
+고객 테이블에서 남성인 고객을 누적포인트가 많은 순서로 정렬한다.
+SELECT *
+FROM TB_CUSTOMER
+WHERE MW_FLG = 'M'
+ORDER BY TOTAL_POINT DESC;

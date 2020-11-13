@@ -1,0 +1,26 @@
+EXISTS 구문
+서브쿼리의 결과가 있으면 데이터를 검색한다.
+
+SELECT 검색필드
+FROM 테이블
+WHERE [NOT] EXISTS (SELECT [필드|의미없는 문자]
+                    FROM 테이블
+                    WHERE 조건식);
+                    
+사용 예
+EXISTS (SELECT customer_cd
+        FORM tb_point
+        WHERE reg_dttm LIKE '2019%')
+tb_point의 reg_dttm값이 2019로 시작하는 customer_cd가 있다면 검색한다.
+
+검색필드 대신 의미없는 문자열인 a나b등으로 서브쿼리의 결과가 있거나 없음을 판단한다.
+EXISTS(SELECT 'A'...)구문은 검색결과가 있는 조건이며, NOT EXISTS(SELECT 'A'...)구문은 검색결과가 없는 조건이다
+
+
+고객포인트테이블의 고객코드가 고객테이블의 남성인 고객코드와 같으면 포인트 적립 내용을 검색한다.
+SELECT *
+FROM tb_point tp
+WHERE EXISTS (SELECT 'A'
+        FROM tb_customer tc
+        WHERE tp.customer_cd = tc.customer_cd
+        AND tc.mw_flg = 'M');

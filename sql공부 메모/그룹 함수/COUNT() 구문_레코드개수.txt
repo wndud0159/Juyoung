@@ -1,0 +1,11 @@
+COUNT() 구문
+COUNT() 함수는 그룹으로 만든 필드명의 레코드 개수를 구한다.
+
+COUNT(필드명)
+COUNT(필드명) OVER (PARTITION BY 그룹필드명)
+결괏값 수치
+
+사용 예
+COUNT(student_nm) OVER (PARTITION BY class_cd)
+class_cd 그룹을 만들고 student_nm의 개수를 구한다
+student_nm  개수는 반에 속한 학생수다.

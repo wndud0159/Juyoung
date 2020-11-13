@@ -1,0 +1,21 @@
+ INTERSECT 구문
+테이블명1과 테이블명2에 대한 각SELECT구문에서 위치별로 각기 대응하는 필드(필드명1,..필드명n)을
+검색해 '교집합'을 만든다
+
+SELECT 필드명1,....필드명n
+FROM 테이블명1
+INTERSECT
+SELECT 필드명2,...필드명n
+FORM 테이블명2
+
+
+수학점수가 90점이상인 c그룹과 국어점수가 90점 이상인 a그룹의 학생명을 교집합으로 검색한다.
+SELECT student_nm
+FROM tb_grade
+WHERE mat >= 90
+INTERSECT
+SELECT student_nm
+FROM tb_grade
+WHERE kor >= 90;
+
+ 둘다 90점이상인 김진숙, 서유리, 이아름만 값이 출력됐다.

@@ -1,0 +1,26 @@
+COMMIT
+데이터베이스에 바뀐 내용을 반영한다.
+
+사용 예
+COMMIT;
+
+
+1. 성적 테이블의 전체 내용을 확인한다.
+2. 성적 테이블에서 독고승재,이도희 학생의 합계와 평균을 바꾼다.
+3. 성적 테이블에서 바꾼 내용을 확인한다.
+4. 성적 테이블의 바꾼 학생 데이터를 데이터베이스에 반영한다.
+
+
+1
+SELECT *
+FROM tb_grade;
+2
+UPDATE tb_grade
+SET tot = kor+eng+mat,
+    avg = ROUND((kor+eng+mat)/3.1)
+WHERE student_nm IN('독고승재','이도희');
+3
+SELECT *
+FROM tb_grade;
+4
+COMMIT;

@@ -1,0 +1,30 @@
+사용자 기능_프로시저
+CREATE [OR REPLACE] PROCEDURE 프로시저명(매개변수1 형식1,...매개변수n 형식n)
+
+IS
+    변수 변수형식(크기);
+BEGIN
+    SQL 구문;
+    [EXCEPTION 예외처리;]
+END 프로시저명
+/
+
+
+CREATE [OR REPLACE] PROCEDURE 프로시저명(매개변수1 형식1,....매개변수n 형식n)
+
+IS
+    변수;
+    CURSOR 커서명 IS SELECT SQL구문;
+    
+BEGIN
+    OPEN 커서명;
+    FETCH 커서명 INTO 변수;
+        SQL 구문;
+    CLOSE 커서명;
+    [EXCEPTION 예외처리;]
+END 프로시저명;
+/
+
+DROP PROCEDURE 프로시저명;
+
+

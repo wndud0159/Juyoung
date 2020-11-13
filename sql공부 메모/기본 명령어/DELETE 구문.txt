@@ -1,0 +1,32 @@
+DELETE
+조건에 만족하는 데이터를 삭제한다.
+
+DELETE
+FROM 테이블명
+WHERE 조건식
+
+사용예
+DELETE
+FROM tb_point
+WHERE customer_cd = '190013';
+tb_point테이블의 customer_cd필드 값이 190013이면 삭제한다.
+
+1.성적 테이블의 전체 내용을 확인한다.
+2.성적 테이블에서 나경숙,박승대,이아름학생을 삭제한다.
+3.성적 테이블에서 삭제한 데이터를 확인한다.
+4.성적 테이블에서 삭제한 내역을 데이터베이스에 반영한다.
+
+
+1
+SELECT *
+FROM tb_grade
+ORDER BY class_cd, student_no;  학생코드랑 학생번호를 정렬해서 전체출력해보았다
+2
+DELETE
+FROM tb_grade
+WHERE student_nm IN('나경숙','박승대','이아름');
+3
+SELECT *
+FROM tb_grade;
+4
+COMMIT;

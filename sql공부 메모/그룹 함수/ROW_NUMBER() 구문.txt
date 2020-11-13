@@ -1,0 +1,21 @@
+ROW_NUMBER() 구문
+ROW_NUMBER() 함수는 그룹필드명으로 그룹을 만들고 정렬필드명으로 정렬해
+중복 없는 순번을 구한다
+
+ROW_NUMBER() OVER(PARTITION BY 그룹필드명 ORDER BY 정렬필드명)
+결괏값 수치
+
+사용 예
+ROW_NUMBER() OVER(PARTITION BY class_cd ORDER BY reading_cnt)
+class_cd 그룹을 만들고 reading_cnt 값으로 오름차순한 결과를 중복 없는 순번으로 구한다.
+
+
+
+7월 성적 테이블에서 국어 점수를 내림차순 정렬해 중복 없는 순위를 구한다.
+SELECT *
+FROM tb_grade_07;
+
+SELECT  test_cd,
+        kor,
+        ROW_NUMBER() OVER(ORDER BY kor DESC) AS 순위
+FROM tb_grade_07;

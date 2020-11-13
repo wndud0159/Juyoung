@@ -1,0 +1,17 @@
+MAX() 구문
+MAX() 함수는 그룹으로 만든 필드명의 최댓값을 구한다
+
+MAX(필드명)
+
+MAX(필드명) OVER (PARTITION BY 그룹필드명)
+결괏값 지정 값에 따라 다름
+
+사용 예
+MAX(kor)....GROUP BY class_cd
+GROUP BY로 class_cd 그룹을 만들고 kor 값 중 최댓값을 구한다
+
+PARTITION BY class_cd
+GROUP BY를 사용하지 않고 class_cd 그룹을 만든다
+
+MAX(kor) ORVER(PARTITION BY class_cd)
+class_cd 그룹을 만들고 kor 값 중 최댓값을 구한다.

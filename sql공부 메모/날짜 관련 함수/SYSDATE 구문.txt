@@ -1,0 +1,37 @@
+SYSDATE
+데이터베이스가 설치된 서버나 개인컴퓨터의 일시(날짜와시간)를 특정 형식으로 검색한다.
+여기서 특정 형식은 데이터베이스 내부에 설정한 YYYY/MM/DD HH:MM:SS와 같은 형식을 말한다.
+
+SYSDATE
+
+CURRENT_DATE
+결과값 날짜
+
+사용 예
+SELECT SYSDATE 
+FROM DUAL;
+DUAL테이블로 현재 일시를 확인하는 기본적인 방법이다.
+
+
+SYSDATE 와 CURRENT_DATE로 현재 일시를 검색한다
+SELECT SYSDATE,
+        CURRENT_DATE
+FROM DUAL;
+
+현재 일시를 기준으로 30일전,60일 이후 일시를 출력한다
+SELECT SYSDATE 30,
+        SYSDATE +60
+FROM DUAL;
+
+현재 일시를 기준으로 3시간 이후의 일시를 출력한다.
+SELECT SYSDATE,
+        SYSDATE + ((1/(86400/60/60))*3) AS CHG_DTTM
+FROM DUAL;
+
+하루(1일)를 초로 바꾸면 86,400초다 SYSDATE 명령의 단위는 1일이므로 1/86400 값에 60을 곱하면 1분이고,
+다시 60을 곱하면 1시간이다. 다음은 1초,1분,1시간,1일을 1/86400을 기준으로 계산한 값이다
+
+1초 = 1/86400
+1분 = (1/86400) * 60
+1시간 =(1/86400) * 60 * 60
+1일 =(1/86400) * 60 * 60 * 24

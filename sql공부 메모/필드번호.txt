@@ -1,0 +1,7 @@
+필드번호
+
+필드번호라 함은
+
+필드를 번호로 나열해서 쓰는것
+    1     2       3             4            5
+|name|age|birth_day|phone_number|email|

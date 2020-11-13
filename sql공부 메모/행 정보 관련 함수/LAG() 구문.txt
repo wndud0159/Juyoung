@@ -1,0 +1,20 @@
+LAG() 구문
+LAG()은 이전 레코드의 필드 값을 구하는 기능으로
+그룹필드명으로 그룹을 만들고 정렬필드명으로 정렬한 필드명의 이전 레코드 값을 구한다.
+
+LAG(필드명) OVER (PARTITION BY 그룹필드명 ORDER BY 정렬필드명)
+결괏값 지정 값에 따라 다름
+
+사용 예
+LAG(station_nm) OVER (PARTITION BY train_no ORDER BY run_ordr)
+train_nm 그룹을 만들고 run_ordr 값으로 정렬한 상태에서 이전 레코드 행의 sration_nm값을 구한다
+
+
+
+열차시간표 테이블에서 열차번호 그룹을 만들고 운행순서로 정렬해 현재 레코드의
+역명과 이전 레코드의 역명을 구한다
+SELECT  train_no,
+        run_ordr,
+        station_nm 현재역명,
+        LAG(station_nm) OVER (PARTITION BY train_no ORDER BY run_ordr) 이전역명
+FROM tb_train_tm;

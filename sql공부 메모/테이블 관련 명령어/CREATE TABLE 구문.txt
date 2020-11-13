@@ -1,0 +1,50 @@
+CREATE TABLE
+테이블을 만들면서 필드와 데이터 형식, 필드자릿수, 공백허용여부, 기본값 등을 설정한다
+
+CREATE TABLE 테이블명(
+필드명1 데이터형식1 [제약조건1]
+.
+.
+.
+필드명n 데이터형식n [제약조건n]
+);
+
+제약조건
+PRIMARY KEY :대표성을 가지는 기본키를 선언한다.
+기본키는 UNIQUE + NOT NULL 속성이다
+FOREIGN KEY : 외부 테이블의 필드와 연관하는 참조키를 선언한다.
+UNIQUE KEY :모든 레코드 행에서 유일한 속성으로 선언한다. (제약걸면 중복값 불가)
+CHECK : 필드 입력값의 범위를 선언한다.
+DEFAULT : 필드 입력값이 없을 때 기본적으로 입력하는 값이다.
+
+
+
+
+2019년 성적 테이블을 만들고 인덱스와 기본키를 설정한다.
+SELECT *
+FROM tb_grade_2019;
+
+CREATE TABLE tb_grade_2019
+(
+test_month CHAR(2 byte) NOT NULL,
+test_cd CHAR(3 byte) NOT NULL,
+kor NUMBER(3),
+eng NUMBER(3),
+mat NUMBER(3)
+);
+ tb_grade_2019 테이블을 만든다
+
+
+CREATE UNIQUE INDEX pk_tb_grade_2019 ON tb_grade_2019(test_month, test_cd);
+ pk_tb_grade_2019 유일키 인덱스를 만들면서 인덱스 필드는 test_month,test_cd로 지정한다
+
+
+ALTER TABLE tb_grade_2019 ADD(CONSTRAINT pk_tb_grade_2019 PRIMARY KEY(test_month, test_cd));
+ 유일키 인덱스로 지정한 pk_tb_grade_2019를 기본키로 지정한다.
+
+
+
+ 2019 성적 테이블에 성적 데이터를 입력하고 확인한다
+INSERT INTO tb_grade_2019 VALUES('01','T01',92,98,84);
+INSERT INTO tb_grade_2019 VALUES('01','T02',84,94,90);
+COMMIT;

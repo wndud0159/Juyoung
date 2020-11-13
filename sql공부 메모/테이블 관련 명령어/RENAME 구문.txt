@@ -1,0 +1,14 @@
+RENAME
+RENAME 명령은 기존 테이블명을 신규 테이블명으로 이름을 바꾼다.
+이 명령은 테이블명만 변경하고 테이블 내 구조를 변경하지 않는다.
+
+ RENAME 기존 테이블명 TO 신규 테이블명;
+ 
+ 사용 예
+ RENAME tb_old_nm TO tb_new_nm
+ tb_old_nm 의 테이블명을 tb_new_nm 으로 변경한다
+
+
+
+
+

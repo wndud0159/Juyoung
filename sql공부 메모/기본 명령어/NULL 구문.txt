@@ -1,0 +1,37 @@
+NULL 구문
+필드에 할당된 값이 없는상태
+IS NULL 명령은 값이 없는 데이터를 검색
+
+
+SELECT 검색필드명
+FROM 테이블명
+WHERE 필드명 IS [NOT] NILL;
+
+사용 예
+WHERE email IS NULL
+email 필드에 값이 없으면 검색한다.
+
+WHERE email IS NOT NULL
+email 필드에 값이 있으면 검색한다.
+
+
+고객 테이블에서 전화번호가 없거나 이메일이 없는 고객을 검색한다
+SELECT *
+FROM tb_customer
+WHERE phone_number IS NULL
+OR email IS NULL;
+
+고객 테이블에서 남성 중 이메일이 없거나, 여성 중 이메일이 있는 고객을 검색해 여성,남성 순으로 보인다
+SELECT *
+FROM tb_customer
+WHERE (mw_flg = 'M'
+AND email IS NULL)
+OR (mw_flg = 'W'
+AND email IS NOT NULL)
+ORDER BY mw_flg DESC;
+
+고객 테이블에서 고객명이 강원진,박승대,이혜옥,남궁소망,한찬희인 고객중 전화번호가 있는 고객을 검색한다.
+SELECT *
+FROM tb_customer
+WHERE customer_nm IN('강원진','박승대','이혜옥','남궁소망','한찬희')
+AND phone_number IS NOT NULL;

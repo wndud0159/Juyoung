@@ -1,0 +1,24 @@
+UPPER() 구문
+UPPER() 함수는 영문을 대문자로 바꾸는 기능으로,
+매개변수로 입력한 문자열을 대문자로 바꾼다
+
+UPPER(문자열)
+결괏값 문자
+
+사용 예
+UPPER('Apple123한글')
+영문인 'Apple'을 'APPLE'로 바꿔 APPLE123한글 로 만든다
+
+
+
+1Day SQL Example : 123 : 오라클 문자열을 대문자로 바꾼다
+SELECT UPPER('1Day SQL Example : 123 : 오라클')
+FROM DUAL;
+
+기타정보 테이블에서 고객영문명을 UPPER함수를 이용해 대문자로 바꾼다
+SELECT *
+FROM tb_etc_info;
+
+SELECT customer_cd,
+UPPER(customer_eng_nm)
+FROM tb_etc_info;

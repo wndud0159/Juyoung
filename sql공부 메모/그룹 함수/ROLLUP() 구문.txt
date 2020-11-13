@@ -1,0 +1,20 @@
+ROLLUP() 구문
+ROLLUP() 함수는 그룹으로 만든 필드명1,...필드명n 의 그룹을 만들어 소계와 총계를 구한다.
+
+ROLLUP(필드명1,..필드명n)
+결괏값 수치
+
+사용 예
+sum(kor) .... GROUP BY ROLLUP(class_cd)
+class_cd 그룹을 만들어 kor의 합계를 구하고 최종적으로 총계를 구한다.
+
+
+
+포인트 테이블에서 고객코드 그룹을 만들고 포인트의 합과 총합을 구한다
+SELECT *
+FROM tb_point;
+
+SELECT  NVL(customer_cd,'총합') AS customer_cd,
+        SUM(point) AS 포인트합
+FROM tb_point
+GROUP BY ROLLUP(customer_cd);
