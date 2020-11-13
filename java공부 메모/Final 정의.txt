@@ -1,0 +1,53 @@
+final 키워드는 3가지 용도로 사용된다.
+
+final 클래스
+
+final이 클래스 이름앞에 사용되면 클래스를 상속받을 수 없음을 지정한다. 다음코드의 경우 FinalClass를 상속받아
+subClass를 만들 수 없다.
+
+final class FinalClass {
+
+...
+..
+}
+class SubClass extends FinalClass { // 컴파일 오류 발생..
+
+.. ..
+}
+
+
+final 메소드
+
+메소드 앞에 final이 붙으면 이 메소드는 더 이상 오버라이딩할 수 없음을 지정한다.
+자식 클래스가 부모 클래스의 특정 메소드를 오버라이딩 하지 못하게 하고 무조건 상속받아 사용하도록 하고자 한다면
+final로 지정한다
+
+public class SuperClass {
+	protected final int finalMethod() {...}
+}
+class SubClass extends SuperClass { // SubClass가 SuperClass를 상속받음
+ protected int finalMethod() {...} // 컴파일 오류, finalMethod() 오버라이딩할 수 없음
+}
+
+
+final 필드
+
+자바에서 final로 필드를 선언하면 필드는 상수가 된다. 예를 들면 다음과 같다.
+
+public class FinalFieldClass {
+	final int ROWS = 10; // 상수 선언, 초기값(10) 지정
+	void f() {
+		int[] intArray = new int[ROWS]; // 상수 활용
+		ROWS = 30; /// 컴파일오류. final로 선언된 필드 값은 변경할 수 없다.
+	}
+}
+
+
+final 키워드를 public static과 함께 선언하면, 프로그램 전체에서 공유할 수 있는 상수가 된다.
+
+class SharedClass {
+	public static final double PI = 3.14;
+}
+
+다른 클래스에서는 다음과 같이 클래스 이름으로 PI를 사용할 수 없다.
+double area = SharedClass.PI*radius*radius;

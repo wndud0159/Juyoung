@@ -1,0 +1,53 @@
+//예외 클래스 선언하기
+//Throwable 클래스의 서브 클래스를 확장하면 독자적인 예외 클래스를 선언할 수 있습니다.
+//자신만의 예외 클래스를 만들어보자
+
+
+//이 메소드는 gar가 0 미만일 경우 CarException예외 객체를 생성합니다 그리고 예외를 던집니다
+
+class CarException extends Exception{
+	//독자적인 예외클래스를 선언
+}
+
+
+class Car{
+	private int num;
+	private double gas;
+
+	public Car() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("자동차 생성");
+	}
+	public void setCar(int num, double gas)throws CarException {//예외를 던지는 메소드임을 선언
+		if (gas < 0) {
+			CarException e = new CarException(); //예외 객체를 생성
+			throw e; // 생성된 예외 객체를 던집니다 throw 예외 객체를 가리키는 변수;
+		}else {
+			this.num = num;
+			this.gas = gas;
+			System.out.println("차량 번호를 " + num + "\n연료 양을 " + gas + "로 변경");
+		}
+	}
+	public void show() {
+		System.out.println("차량 번호 " + num + "\n연료 양 " + gas);
+	}
+}
+
+
+public class Test{
+	public static void main(String[] args) {
+		Car car1 = new Car();
+		try {
+			car1.setCar(1234, -10.0);
+		} catch (CarException e) {
+			System.out.println(e + "가 던져졌습니다.");
+		}
+		car1.show();
+	}
+}
+//출력문
+//자동차 생성
+//CarException가 던져졌습니다.
+//차량 번호 0
+//연료 양 0.0

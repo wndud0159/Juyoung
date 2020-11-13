@@ -1,0 +1,33 @@
+//스트림으로 파일에 출력하기
+//파일로 내보내를 행위를 출력,
+//파일을 읽어 들이는 행위를 입력이라고 부른다
+//파일에 사용하면 데이터를 저장하거나 읽어들이는 실용적인 프로그램을
+//만들 수 있습니다.
+
+import java.io.*;
+public class Test{
+	public static void main(String[] args) {
+		try {
+			PrintWriter pw = new PrintWriter
+					(new BufferedWriter(new FileWriter("test1.txt")));
+			
+			pw.println("Hello");
+			pw.println("Goodbye");
+			System.out.println("파일에 기록되었습니다");
+			pw.close();
+		} catch (IOException e) {
+			System.out.println("입출력 오류가 발생했습니다.");
+		}
+	}
+}
+
+
+//1.파일 이름을 지정하고 FileWriter클래스의 객체를 생성한다
+//2.PrintWriter을 받아 BufferedReader클래스의 객체를 생성한다.
+//3.BufferedReader를 받아 PrintWriter클래스의 객체를 생성한다.
+//4.BufferedReader의 println()메소드를 사용하여 데이터를 1줄씩 기록한다
+//5.그리고 파일을 다룰 대에는 마지막에 close()메소드를
+//사용하여 파일닫기 작업을 수행합니다
+
+
+//작업을 수행하면 지정해논 workspace에 test1.txt파일이 생성되있고 그안에 입력문이 저장되어있다.

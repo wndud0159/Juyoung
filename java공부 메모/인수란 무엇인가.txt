@@ -1,0 +1,20 @@
+인수란? 
+메소드 본체에 정보(인수)를 전달하여 내부의 코드 실행에 활용할 수 있습니다
+Ex)
+Class car { // 클래스 car 선언
+int num;    // 멤버필드에 변수 num 선언
+
+void setNum(int num){   // 인수를 전달할 메소드 선언(매개변수 num선언)    (메소드를 선언해서 값은 받는 변수를 가인수라고 부른다.)
+this.num = num  // 멤버필드 변수 num에   setNum 메소드에 변수 num 대입
+   }
+}
+
+public class Sample {   // Sample 클래스 선언
+	public static void main(String[] args){  // 메인 메소드 선언 (모든건 메인메소드에서 해결이 됨)
+	Car car = new car();   // Car 클래스의 객체를 생성 
+	car.num = 1235; //  car 클래스의 멤버필드 변수num을 호출해서 값을 대입    
+	System.out.println(car.num);   // Car클래스 num 을 출력   컴파일 값 : 1235
+	car.setNum(1111);  // 메소드 setNum을 호출하여 값을 대입하여 값을 변경 (메소드를 호출할 떄 전달하는 값을 가리켜 실인수라고 부른다.)
+	System.out.println(car.num)  // Car클래스 num을 출력 컴파일 값 : 1111
+    }
+}

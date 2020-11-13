@@ -1,0 +1,23 @@
+클래스라이브러리 패키지
+
+패키지이름			패키지에 포함된 클래스 
+
+java.applet			애플릿 관련 클래스
+
+java.awt				윈도우 부품 관련 클래스
+
+java.awt.event			이벤트 관련 클래스
+
+java.awt.image			이미지 관련 클래스
+
+java.lang				기본적인 클래스
+
+java.io				입출력 관련 클래스
+
+java.net				네트워크 관련 클래스
+
+java.utill				유틸리티 관련 클래스
+
+java.math			수치 연산 관련 클래스
+
+java.text				숫자와 날짜 등의 국제화 관련 클래스

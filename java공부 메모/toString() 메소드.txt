@@ -1,0 +1,36 @@
+//toString()메소드
+//객체를 나타내는 문자열을 반환
+
+
+class Car {
+	protected int num;
+	protected double gas;
+	public Car() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("자동차가 만들어졌습니다.");
+	}
+	public void setNumGas(int num, double gas) {
+		this.num = num;
+		this.gas = gas;
+		System.out.println("차량번호가 " + num + "\n연료량이 " + gas + "로 변경되었습니다.");
+	}
+		public String toString() { // toString 메소드 정의
+			return "차량번호는 " + num + "\n연료량은 " + gas; // 이 문자열을 반환
+		}
+}
+
+public class Test {
+	public static void main(String[] args) {
+		Car car1 = new Car();
+		car1.setNumGas(1234, 20.5);
+		System.out.println(car1); //toString() 메소드의 반환값이 사용됩니다
+	
+	}
+}
+//실행결과
+//자동차가 만들어졌습니다.
+//차량번호가 1234
+//연료량이 20.5로 변경되었습니다.
+//차량번호는 1234  // 새롭게 정의한 리턴값이 출력됩니다.
+//연료량은 20.5

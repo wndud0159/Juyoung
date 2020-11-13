@@ -1,0 +1,64 @@
+//예외의 원리 이해
+
+//내가 만약 bufferedReader 를 사용해서 입력 값을 받는다 근데 int형을 수를 받고싶지만 문자를 받았을경우
+//오류가 날것이다 그걸 방지하기 위해 try catch를 사용하여 다시 입력하라는 코드를 만든다.
+
+
+//견고한 프로그램을 작성할 수 있다.
+//이를 일컬어 예외처리(exception handling)
+//catch 블록에서 예외를 받는다.
+//catch 블록은 Throwable 클래스의 서브 클래스 객체(예외)만 받을 수 있다.
+//finally 블록에는 예외 발생 유무에 관계없이 마지막에 실행시킬 코드를 작성한다.
+
+
+
+//try {
+//	예외 발생을 조사할 문장(statemnet)
+//	.......
+//}
+//catch(예외 클래스 변수명){
+//	예외가 발생했을 때 실행시킬 코드
+//	.........
+//}
+
+
+
+
+
+public class Test{
+	public static void main(String[] args) {
+		try{
+			int[] test = new int[5];
+			System.out.println("test[10]에 값을 대입합니다.");
+			test[10] = 80;
+			System.out.println("test[10]에 80을 대입했습니다.");
+		}
+		catch(ArrayIndexOutOfBoundsException e) { //변수 e에 예외를 받습니다
+			System.out.println("배열 길이를 넘어섰습니다.");
+			System.out.println(e + "라는 예외가 발생했습니다."); // 어떤종류의 예외인지 출력합니다
+		}
+		finally {
+			System.out.println("마지막엔 반드시 이 코드가 실행됩니다."); 
+		}
+		System.out.println("무사히 종료했습니다.");
+	}
+}
+//출력결과
+//test[10]에 값을 대입합니다.
+//배열 길이를 넘어섰습니다.
+//java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 5라는 예외가 발생했습니다.
+//마지막엔 반드시 이 코드가 실행됩니다.
+//무사히 종료했습니다.
+
+
+
+다양한 예외 클래스들
+catch(ArrayIndexOutOfBoundsException ae){ // 배열 길이를 넘어섰을 경우의 에러를 처리
+	
+}
+catch(IOException ie){ // 입출력 에러를 처리
+	
+}
+catch(Exception e){ // 배열 범위 에러와 입출력 에러를 처리
+	
+}

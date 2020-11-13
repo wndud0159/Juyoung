@@ -1,0 +1,71 @@
+오버라이딩(다형성) 정의
+슈퍼클래스와 완전히 동일한 메소드를 선언할 수 있는 기능이 있습니다.
+메소드 이름과 인수의 개수와 형(type)까지
+서브클래스의 메소드로 슈퍼 클래스의 메소드를 대신하는 기능을 일컬어 오버라이딩이라고 부른다.
+
+★같은 부분이있으니 상속을 받는건데 다른부분이 있는걸 오버라이딩한다.
+
+오버라이딩으로 얻을 수 있는 이점
+하나의 메소드 이름으로 각각의 객체가 지니는 기능을 적절하게 실행시킬 수 있습니다
+
+
+class Car{
+	protected int num;
+	protected double gas;
+	public Car() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("자동차가 만들어졌습니다.");
+	}
+	public void setNumGas(int num, double gas) {
+		this.num = num;
+		this.gas = gas;
+		System.out.println("차량번호가 " + num + "\n연료량이 " + gas + "로 변경되었습니다.");
+	}
+	public void show() {
+		System.out.println("차량번호는 " + num + "\n연료량은 " + gas);
+	}
+}
+
+class RacingCar extends Car{
+	private int course;
+	public RacingCar() {
+		course = 0;
+		System.out.println("레이싱카가 만들어졌습니다.");
+	}
+	public void setCourse(int course) {
+		this.course = course;
+	}
+	public void show() {
+		System.out.println("차량번호는 " + this.num + "\n연료량은" + this.gas + "\n코스번호는 " + course);
+	}
+}
+public class Test {
+	public static void main(String[] args) {
+		Car[] cars = new Car[2]; //슈퍼클래스 배열생성
+		cars[0] = new Car();  // 슈퍼클래스 객체 생성
+		cars[0].setNumGas(1234, 20.5);
+		cars[1] = new RacingCar(); // 서브클래스 객체 생성
+		cars[1].setNumGas(4567, 30.5);
+		
+		for (int i = 0; i < cars.length; i++) {
+			cars[i].show();
+		}
+	}
+}
+//출력문
+//자동차가 만들어졌습니다.
+//차량번호가 1234
+//연료량이 20.5로 변경되었습니다.
+//자동차가 만들어졌습니다.
+//레이싱카가 만들어졌습니다.
+//차량번호가 4567
+//연료량이 30.5로 변경되었습니다.
+//차량번호는 1234  ---- 슈퍼클래스 show 메소드 호출
+//연료량은 20.5
+//차량번호는 4567	---- 서브클래스 show 메소드 호출
+//연료량은30.5
+//코스번호는 0
+
+//오버라이딩 기능이 동작하므로 슈퍼클래스 객체와 서브클래스 객체를 함께 다룰 수 있습니다.
+//하나의 메소드 이름이 상황에 맞춰 다른 기능을 가지는 것을 "다형성" 이라고 부릅니다.

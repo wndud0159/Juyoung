@@ -1,0 +1,29 @@
+//스레드 또다른 생성방법
+//Runnable 인터페이스(java.lang 패키지)를 구현하면 스레드로 만들 수 있음
+
+
+class Car implements Runnable{ 
+	private String name;
+
+	public Car(String name) {
+		this.name = name;
+	}
+	public void run() { 
+		for (int i = 0; i < 5; i++) {
+			System.out.println(name + "가 실행중입니다.");
+		}
+	}
+}
+
+public class Test{
+	public static void main(String[] args) {
+		Car car1 = new Car("1호차"); // car1 객체를 생성
+		Thread th1 = new Thread(car1); // Thread클래스의 객체를 생성
+		th1.start(); // 스레드를 기동시킨다
+		for (int i = 0; i < 5; i++) {
+			System.out.println("main() 메소드를 실행중입니다.");
+		}
+	}
+}
+
+

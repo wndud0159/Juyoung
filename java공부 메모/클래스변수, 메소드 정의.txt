@@ -1,0 +1,60 @@
+클래스 변수, 메소드 정의
+객체를 생성하지 않더라고 호출할 수 있는 기능을 가지고 있습니다
+클래스 전체와 연결된 필드를 클래스필드라고 부른다
+클래스 전체와 연결된 메소드를 클래스메소드라고 부른다
+
+클래스메소드 사용시 주의점
+클래스메소드에서 인스턴스메소드를 호출할 순 없다
+
+this라는것은 인스턴스 메소드 안에서만 붙일 수 있습니다
+따라서 특정 객체 스스로를 가르키는 this라는 키워드를 사용할 수 없습니다
+
+class Car{
+	public static int sum = 0;; //클래스 변수입니다.
+	private int num;
+	private double gas;  
+	
+	public Car() { 
+		num = 0;   
+		gas = 0.0;
+		sum++; // 생성자가 호출될 때, 클래스변수 sum의 값을 1 증가 시킵니다.
+		System.out.println("자동차가 만들어졌습니다.");
+	}
+	
+	public void setNumGas(int num, double gas) { 
+		this.num = num;
+		this.gas = gas;
+		System.out.println("차량 번호를 " + num + "으로," + "연료 양을 " + gas + "로 바꾸었습니다.");
+	}
+	public static void showSum() { // 클래스 메소드 입니다.
+		System.out.println("자동차는 모두 " + sum + "대 있습니다.");
+	}
+	public void show() { 
+		System.out.println("차량번호는 " + this.num + "\n" + "연료량은 " + this.gas);
+		}
+}
+
+public class Sample12 {
+	public static void main(String[] args) {
+		Car.showSum(); // static 선언으로 인해 객체생성을 안해도 불러올 수 있습니다. 클래스메소드 호출
+		Car car1 = new Car(); // 객체생성
+		car1.setNumGas(1234, 20.5);
+		
+		
+		Car.showSum(); // 다시 호출
+		
+		
+		Car car2 = new Car();
+		car2.setNumGas(4567, 30.5);
+		Car.showSum();
+	}
+}
+
+실행화면
+자동차는 모두 0대 있습니다.   //클래스 메소드는 0대라고 출력했습니다
+자동차가 만들어졌습니다. 
+차량 번호를 1234으로,연료 양을 20.5로 바꾸었습니다.
+자동차는 모두 1대 있습니다.   // 클래스 메소드는 1대라고 출력했습니다.
+자동차가 만들어졌습니다.
+차량 번호를 4567으로,연료 양을 30.5로 바꾸었습니다.
+자동차는 모두 2대 있습니다.

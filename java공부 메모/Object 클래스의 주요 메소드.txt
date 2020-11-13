@@ -1,0 +1,4 @@
+Object 클래스의 주요 메소드
+boolean equals(Object obj)		해당객체가 인수로 전달된 객체와 동일한지 여부를 반환
+Class getClass()			해당 객체의 클래스를 반환
+String toString()			객체를 나타내는 문자열을 반환

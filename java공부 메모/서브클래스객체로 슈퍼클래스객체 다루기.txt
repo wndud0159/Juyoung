@@ -1,0 +1,26 @@
+슈퍼클래스 변수를 사용해서 서브클래스 객체를 다룰 수 있다.
+
+class Car{
+ public void show{
+	System.our.println("슈퍼클래스");
+	}
+  }
+class RacingCar extends Car{
+ public void show{
+	System.our.println("서브클래스");
+	}
+}
+
+public class Test{
+	public static void main(String[] args){
+	
+Car car1 = new RacingCar(); ---슈퍼클래스 변수로 객체를 다루고 있다.
+car1.show();
+
+	}
+}
+
+출력결과 : 서브클래스
+이유 
+오버라이딩이 되어있기때문
+객체를 가리키는 변수의 클래스에 관계없이 객체 자신의 클래스에 따라 적절한 메소드가 호출

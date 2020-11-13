@@ -1,0 +1,5 @@
+조건연산자 
+int res = 1;
+char ans = (res == 1) ? 'A' : 'B'
+이 경우 res 1이기 때문에 true 그래서 ans에 A 값을 대입한다. 
+만약, res가 2라면 false ans에 B 값을 대입한다.

@@ -1,0 +1,42 @@
+//getClass() 메소드
+//객체가 속한 클래스의 정보를 반환
+
+class Car {
+	protected int num;
+	protected double gas;
+	public Car() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("자동차가 만들어졌습니다.");
+	}
+	public void setNumGas(int num, double gas) {
+		this.num = num;
+		this.gas = gas;
+		System.out.println("차량번호가 " + num + "\n연료량이 " + gas + "로 변경되었습니다.");
+	}	
+}
+
+class RacingCar extends Car{
+	private int course;
+	public RacingCar() {
+		course = 0;
+		System.out.println("스포츠카가 만들어졌습니다.");
+	}
+}
+public class Test {
+	public static void main(String[] args) {
+		Car[] cars = new Car[2];
+		cars[0] = new Car(); 	// 첫번 째 객체는 Car클래스 입니다
+		cars[1] = new RacingCar(); // 두번 째 객체는 RacingCar클래스 입니다.
+		for (int i = 0; i < cars.length; i++) {
+			Class cl = cars[i].getClass(); // getClass()메소드는 Class객체를 반환합니다.
+			System.out.println(cl);
+		}
+	}
+}
+//출력결과
+//자동차가 만들어졌습니다.
+//자동차가 만들어졌습니다.
+//스포츠카가 만들어졌습니다.
+//class Car 			객체의 클래스에 대한 정보를 확인할 수 있습니다.
+//class RacingCar

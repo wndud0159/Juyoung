@@ -1,0 +1,30 @@
+//스트림으로 파일에 입력하기
+//파일로 내보내는 행위 : 출력
+//파일로 읽어들이는 행위 : 입력
+import java.io.*;
+public class Test{
+	public static void main(String[] args) {
+		try {
+			BufferedReader br = 
+				new BufferedReader(new FileReader("test1.txt"));
+
+			String str1 = br.readLine(); // 파일 1행을 읽어들인다.
+			String str2 = br.readLine(); // 파일 2행을 읽어들인다.
+			
+			System.out.println(str1);
+			System.out.println(str2);
+			br.close();
+		} catch (IOException e) {
+			System.out.println("입출력 에러가 발생했습니다.");
+		}
+	}
+}
+//출력
+//Hello
+//Goodbye
+
+
+
+//1.파일 이름을 지정하고 FileReader클래스의 객체를 생성한다.
+//2.FileReader에서 BufferedReader클래스의 객체를 생성한다.
+//3.BufferedReader의 readLine()메소드를 사용하여 데이터를 한 줄 읽어들인다.

@@ -1,0 +1,42 @@
+//생성자
+//생성자란, 프로그램 부품의 초기 설정을 자동으로 하기 위한 장치인 것입니다.
+//객체를 초기화하기 위해 생성자를 정의할 수 있다.
+
+//생성자오버로딩
+//여러 같은 이름의 생성자에 매개변수에 가인수와 개수를 각 다르게 주고 객체생성과 동시에 실인수를 주면
+//생성자 오버로딩도 가능하다.
+
+
+//생성자를 생략하게 된다면?
+//인수없는 생성자가 자동으로 생성됩니다. 이러한 것을 기본생성자라고 부른다.
+
+class Car{
+	private int num;
+	private double gas;
+	
+	public Car() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("자동차가 만들어졌습니다.");
+	}
+	public Car(int num, double gas) {
+★★★★>>	this(); //2개의 인수를 가지는 생성자의 시작 부분에서, 인수없는 생성자를 호출
+		this.num = num;
+		this.gas = gas;
+		System.out.println("차량번호를 " + num + "으로 " + "연료량을 " + gas + "로 바꾸었습니다.");
+	}
+	
+	
+	public void Show() {
+		System.out.println("차량번호는 " + this.num + "\n" + "연료량은 " + this.gas);
+		}
+}
+
+public class Sample12 {
+	public static void main(String[] args) {
+		Car car1 = new Car();
+		car1.Show();
+		Car car2 = new Car(1234, 20.5);
+		car2.Show();
+	}
+}

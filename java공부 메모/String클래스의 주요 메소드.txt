@@ -1,0 +1,30 @@
+String 클래스의 주요 메소드
+메소드명                                                     |                    기능
+char charAt(int index) 	 			문자열에서 index의 위치에 있는 문자를 반환
+						
+boolean endsWhit(String suffix)			비교대상 문자열이 suffix로 끝나는지의 여부를 반환
+						
+boolean equals(object anobject)			비교대상 문자열이 anObject와 같은 문자열인지의 여부를 반환
+			
+boolean equalslgnoreCase(String anotherString)		비교대상 문자열이 대소문자 구별없이 anotherString과 같은문자열인지의 여부를 반환
+		
+int indexOf(int ch)					비교대상 문자열에서 ch가 최초로 출현하는 위치를 반환
+
+int index(String str)					비교대상 문자열에서 str이 최초로 출현하는 위치를 반환
+
+int lastIndexOf(int ch)				비교대상 문자열에서 ch가 마지막으로 출현하는 위치를 반환
+
+int lastIndexOf(String str)				비교대상 문자열에서 srt이 문자열에서 마지막으로 출현하는 위치를 반환
+
+int length()					문자열의 길이를 반환
+
+String substring(String beginIndex)			beginIndex 위치에서 마지막까지의 문자열을 추출하여 반환
+
+String substring(int beginIndex, int endIndex)		beginIndex부터 endIndex까지의 문자열을 추출하여 반환
+
+boolean startsWhit(String prefix)  			비교대상 문자열이 preffix로 시작하는지 여부를 판단
+
+String toLowerCase()				문자열을 소문자로 변환한 후 반환
+
+String toUpperCase()				문자열을 대문자로 변환한 후 반환
+

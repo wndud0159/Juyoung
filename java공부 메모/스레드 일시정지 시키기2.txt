@@ -1,0 +1,43 @@
+//스레드의 일시정지 시키기2
+//Thread의 sleep()메소드를 사용해본다.
+//이 메소드를 사용하면 스레드를 일시적으로 정지시킬수있습니다
+
+class Car extends Thread{ //Thread 클래스를 확장했습니다.
+	private String name;
+
+	public Car(String name) {
+		this.name = name;
+	}
+	public void run() { //Thread클래스를 확장한 클래스는 반드시 그안의 run()메소드를 정의해야합니다.
+		for (int i = 0; i < 5; i++) {
+				System.out.println(name + "가 실행중입니다.");
+		}
+	}
+}
+
+public class Test{
+	public static void main(String[] args) {
+		Car car1 = new Car("1호차"); // Thread 클래스의 서브클래스의 객체를 생성
+		car1.start(); 
+		for (int i = 0; i < 5; i++) {
+			try {
+				Thread.sleep(1000); //이 문장이 실행될때마다 스레드가 1초간 일시 정지 합니다
+				System.out.println("main() 메소드를 실행중입니다.");
+			} catch (InterruptedException e) {
+				// TODO: handle exception
+			}
+		}
+	}
+}
+
+//1호차가 실행중입니다.
+//1호차가 실행중입니다.
+//1호차가 실행중입니다.
+//1호차가 실행중입니다.
+//1호차가 실행중입니다.
+//main() 메소드를 실행중입니다. --- 1초 가격을 두고 출력문 나온다
+//main() 메소드를 실행중입니다.
+//main() 메소드를 실행중입니다.
+//main() 메소드를 실행중입니다.
+//main() 메소드를 실행중입니다.
+

@@ -1,0 +1,58 @@
+인터페이스 다중구현
+//인터페이스 정의
+//추상클래스와 비슷하지만 조금 다르다
+//인터페이스는 필드와 메소드를 가질 수 있습니다.
+//단, 생성자는 가질 수 없습니다.
+//인터페이스 멤버에는 어떠한 제하네자도 붙이지 않습니다.
+//그리고 필드에는 public static final,
+//메소드에는 abstract제한자를 붙인 것이나 마찬가지이다.
+
+interface iVehicle{ // 인터페이스 선언문
+	void show(); // 추상메소드 입니다.
+}
+
+class Car implements iVehicle{ // 마찬가지 인터페이스 구현만하는건 오류가남 show메소드완성해야함
+	private int num;
+	private double gas;
+	public Car(int num, double gas) {
+		this.num = num;
+		this.gas = gas;
+		System.out.println("차량번호 " + num + "\n연료량 " + gas + "인 자동차 생성");
+	}
+	public void show() {
+		System.out.println("차량번호 " + num + "\n연료량 " + gas);
+	}
+}
+
+class Plane implements iVehicle{
+	private int flight;
+	public Plane(int flight) {
+		this.flight = flight;
+		System.out.println("비행기번호가 " + flight + "인 비행기 생성");
+	}
+	public void show() {
+		System.out.println("비행기번호 " + flight);
+	}
+}
+
+public class Test{
+	public static void main(String[] args) {
+		iVehicle[] ivc = new iVehicle[2]; /// 인터페이스 배열 생성
+		ivc[0] = new Car(1234, 20.5);  //첫 번째 객체는 Car 클래스
+		ivc[1] = new Plane(50); // 두번 째 객체는 Plane 클래스
+		
+		for (int i = 0; i < ivc.length; i++) {
+			ivc[i].show();
+		}
+	}
+}
+
+//실행결과
+//차량번호 1234
+//연료량 20.5인 자동차 생성
+//비행기번호가 50인 비행기 생성
+//차량번호 1234
+//연료량 20.5
+//비행기번호 50
+
+//인터페이스 또한 추상클래스와 동일한 처리가 가능함

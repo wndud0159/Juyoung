@@ -1,0 +1,19 @@
+//스트림으로 txt파일의 많은양의 데이터 읽어들이기
+import java.io.*;
+public class Test{
+	public static void main(String[] args) {
+		try {
+			BufferedReader br = new BufferedReader(new FileReader("test1.txt"));
+			int[] num = new int[8];
+			for (int i = 0; i < num.length; i++) {
+				num[i] = Integer.parseInt(br.readLine());
+				System.out.println(num[i]);
+				
+			}
+			br.close();
+		} catch (IOException e) {
+			System.out.println("입출력 오류가 발생했습니다.");
+			System.out.println("오류내용 " + e);
+		}
+	}
+}

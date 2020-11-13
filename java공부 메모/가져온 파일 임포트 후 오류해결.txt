@@ -1,0 +1,9 @@
+프로젝트 우클릭 
+Build Pach 클릭
+add libraries 클릭
+
+
+
+프로젝트 우클릭
+properties 클릭
+Libraries 에서 x 표시 있는거 Remove

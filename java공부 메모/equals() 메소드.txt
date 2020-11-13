@@ -1,0 +1,36 @@
+//equals() 메소드
+//두 변수가 가리키는 객체가 동일한 경우 true를 반환
+
+class Car {
+	protected int num;
+	protected double gas;
+	public Car() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("자동차가 만들어졌습니다.");
+	}
+	public void setNumGas(int num, double gas) {
+		this.num = num;
+		this.gas = gas;
+		System.out.println("차량번호가 " + num + "\n연료량이 " + gas + "로 변경되었습니다.");
+	}
+	public String toString() { // toString 메소드 정의
+		return "차량번호는 " + num + "\n연료량은 " + gas; // 이 문자열을 반환
+	}
+}
+
+public class Test {
+	public static void main(String[] args) {
+		Car car1 = new Car(); //Car1 과 Car2는 서로 다른 객체를 가르킵니다.
+		Car car2 = new Car();
+		Car car3 = car1; // Car1 과 Car3은 같은 객체를 가르킵니다.
+		
+		boolean b11 = car1.equals(car2);
+		boolean b12 = car1.equals(car3);
+		System.out.println(b11);
+		System.out.println(b12);
+	}
+}
+//출력결과
+//false // Car1과 Car2는 서로 다른객체이기 때문에 false
+//true  // Car1과 Car3은 같은 객체이기 떄문에 true

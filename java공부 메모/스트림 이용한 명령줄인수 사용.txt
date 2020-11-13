@@ -1,0 +1,25 @@
+//스트림 이용한 명령줄 인수
+//명령 줄 인수란? 프로그램이 실행될 때 사용자로부터 입력 값을 받아 프로그램의 처리에 이용하는 기능입니다.
+//명령줄인수는 다음과 같이 mian()메소드의 인수로 정해져있습니다.
+
+import java.io.*;
+public class Test{
+	public static void main(String[] args) {
+		if (args.length != 1) { // 입력한 문자열의 개수를 확인합니다.
+			System.out.println(args.length);
+			System.exit(1);                    
+		}
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(args[0]));//cd 명령어 뒤에 공백 문자를 입력하고 이동할 디렉토리 이름일 적습니다.
+			
+			String str;
+			while((str = br.readLine()) != null);
+			System.out.println(str);
+			br.close();
+		} catch (IOException e) {
+			System.out.println("입출력 오류가 발생했습니다.");
+		}
+	}
+}
+
+//오류가 뜬다 다음에 배워서 사용해보자..........

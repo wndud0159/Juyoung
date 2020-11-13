@@ -1,0 +1,46 @@
+//스레드 정의
+//우리는 main메소드부터 시작해서 차례로 코드를 실행시켰다
+//java는 하나의 코드가 이러한 처리흐름을 여러 개 가질 수 있도록 지원합니다.
+//이러한 각각의 처리 흐름을 일컬어 스레드라고 부른다.
+//코드에서 처리 흐름(스레드)을 늘리는 행위를 일컬어 '스레드를 가동시킨다' 라고 한다.
+
+//스레드를 가동시키기 위해선 Thread클래스(java.leng패키지)를 확장한 클래스를 만들어야한다.
+//start()메소드는 Car클래스가 Thread클래스로부터 상속받은 메소드입니다.
+//이 메소드를 호출하면, 새로운 스레드를 기동시키고 그 스레드는 가장 먼저 run()메소드를 실행시킬 것
+
+
+class Car extends Thread{ //Thread 클래스를 확장했습니다.
+	private String name;
+	
+	public Car(String name) {
+		this.name = name;
+	}
+	public void run() { //Thread클래스를 확장한 클래스는 반드시 그안의 run()메소드를 정의해야합니다.
+		for (int i = 0; i < 5; i++) {
+			System.out.println(name + "가 실행중입니다.");
+		}
+	}
+}
+
+public class Test{
+	public static void main(String[] args) {
+		Car car1 = new Car("1호차"); // Thread 클래스의 서브클래스의 객체를 생성
+		car1.start(); // 새로운 스레드를 기동시킵니다
+		
+		for (int i = 0; i < 5; i++) {
+			System.out.println("main() 메소드를 실행중입니다.");
+		}
+	}
+}
+
+//출력화면
+//main() 메소드를 실행중입니다.
+//main() 메소드를 실행중입니다.
+//main() 메소드를 실행중입니다.
+//main() 메소드를 실행중입니다.
+//main() 메소드를 실행중입니다.
+//1호차가 실행중입니다.
+//1호차가 실행중입니다.
+//1호차가 실행중입니다.
+//1호차가 실행중입니다.
+//1호차가 실행중입니다.

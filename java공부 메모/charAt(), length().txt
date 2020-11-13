@@ -1,0 +1,19 @@
+charAt() 메소드와 
+length() 메소드
+
+
+public class Sample12{
+	public static void main(String[] args) {
+		String str = "Hello";
+		char ch1 = str.charAt(0);
+		char ch2 = str.charAt(1);
+		int len = str.length();
+		System.out.println(ch1);
+		System.out.println(ch2);
+		System.out.println(len);
+	}
+}
+
+H   --- 첫번째 문자를 추출
+e   --- 두번째 문자를 추출
+5   --- 문자열의 길이를 반환

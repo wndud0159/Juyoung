@@ -1,0 +1,30 @@
+//스트림 정의
+//입력과 출력은 스트림의 개념을 사용하여 이루어집니다.
+//System.in(표준입력)
+//System.out(표준출력)
+//1.표준입력을 받아, InputStreamReader클래스의 객체를 생성한다.
+//2.BufferedReader클래스의 객체를 생성한다.
+//3.readLine()메소드를 사용해 데이터를 한 줄 읽어들인다.
+
+import java.io.*;
+public class Test{
+	public static void main(String[] args) {
+		System.out.println("문자열을 입력하십시오.");
+		try {
+			BufferedReader br =
+				new BufferedReader // 버퍼를 경유하여 읽어들입니다
+					(new InputStreamReader(System.in)); // 표준입력을 사용하여 문자스트림을 작성합니다
+			String str = br.readLine(); // 1행을 읽어들입니다.
+			System.out.println(str + "(이)가 입력되었습니다.");
+		} catch (IOException e) {
+			System.out.println("입출력 에러가 발생했습니다\n원인은 " + e);
+		}
+	}
+}
+//출력문
+//문자열을 입력하십시오.
+//Integer
+//Integer(이)가 입력되었습니다.
+
+//InputStreamReader클래스 문자스트림
+//BufferedReader클래스 버퍼를 경우해 읽어 들이기 위한 문자스트림
