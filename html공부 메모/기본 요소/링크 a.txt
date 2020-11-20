@@ -1,0 +1,31 @@
+링크 <a href=""></a>
+
+요소유형 : 인라인 요소
+
+1. 다른html문서의 이동(외부링크)이나 동일한 html문서 내에서 이동(내부링크)
+이메일주소에 링크를 지정할 수 있다
+2. href 속성은 링크의 목적지를 지정할 수 있다
+3.블록레벨요소 포함 가능 다만 input, button, 다른link(<a>)등의 요소 포함불가
+
+
+
+
+<!Doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 지정하는곳</title>
+    </head>
+    <body>
+        <p>이메일 주소 링크 방법</p>
+        <a href="mailto:wndud0159@naver.com">wndud0159@naver.com</a> <br>
+        <p>외부링크 방법</p>
+        <a href="http://naver.com">네이버</a>
+        <p>내부링크 방법</p>
+        <a href="#content">본문바로가기</a>
+        <p id="content">본문내용</p>
+        <!-- 내부링크방법에서 #은 id속성의 기호입니다 
+        본문 바로가기텍스트를 클릭하였을때 #(id속성)이 content인요소
+        즉  <p id="content">본문내용</p>의 위치로 이동하라는 뜻-->
+    </body>
+</html>

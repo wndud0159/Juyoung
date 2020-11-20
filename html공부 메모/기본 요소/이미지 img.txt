@@ -1,0 +1,52 @@
+이미지 <img src="" alt="">
+
+요소유형 : 인라인 요소
+
+1. html문서에 이미지를 삽입할 때 사용하는 태그
+2. img태그의 필수 속성인 src속성은 불러올 이미지의 경로를 지정합니다
+경로는 a태그에서 설명한 절대 경로와 상대결로의 개념이 똑같이 적용된다
+3. img태그는 인라인 요소이며 종료태그가없는 빈요소이다
+4. alt속성을 필수적으로 정의해주어야 한다 필수필수
+
+
+
+<!Doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 지정하는곳</title>
+    </head>
+    <body>
+        <h1><img src="images/logo.png" alt="아이콕스"></h1>
+        <a href="#"><img src="whitestar" alt="화이트스타"></a>
+        <!-- 경로가 바뀌어 이미지가 깨졌음에도 alt속성의 텍스트가 출력되어
+        이미지에 대한 내용이 어떤것인지 확인가능
+        만약, 이미지에서 콘텐츠의 내용을 전달할 필요없을경우 alt속성 정의해도된다 -->
+    </body>
+</html>
+
+
+
+
+가끔 하나의 이미지에 여러개의 링크가 적용 되어야 하는 경우가 있는데 이때는 map태그를 
+사용하며, 링크의 영역을 사격형, 원, 다각형으로 나타낼수 있습니다
+rect 사각형
+circle 원
+poly 다각형
+
+<!Doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 지정하는곳</title>
+    </head>
+    <body>
+        <img src="이미지파일명" alt="대체텍스트" usemap="#맵이름">
+        <map name="맵이름">
+            <area shape="rect" coords="맵좌표" href="url" alt="대체텍스트">
+            <area shape="circle" coords="맵좌표" href="url" alt="대체텍스트">
+            <area shape="poly" coords="맵좌표" href="url" alt="대체텍스트">
+        </map>
+    </body>
+</html>
+

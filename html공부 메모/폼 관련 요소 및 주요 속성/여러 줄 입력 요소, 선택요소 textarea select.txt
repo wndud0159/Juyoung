@@ -1,0 +1,39 @@
+여러 줄 입력 요소, 선택요소 textarea select
+
+요소유형 인라인 요소
+
+textarea    1. 여러 줄 텍스트 입력 상자 태그이다
+            2. rows 속성과 cols 속성으로 텍스트 입력 상자의 행과 열 수를 지정
+
+select      1. 선택 목록 상자 태그이다
+            2. option태그 외에 다른 태그는 자식 요소로 올 수 없다
+            3. option태그 select 속성이 정의되면 웹페이지 실행 시 해당
+            option태그가 기본 목록으로 표시된다
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+    </head>
+    <body>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>회원가입</legend>
+                <p>가입목적 : <br><textarea cols="100" rows="5"></textarea></p>
+                <p>전화번호 :
+                    <select>
+                        <option>지역번호</option>
+                        <option selceted="selected">02</option>
+                        <option>031</option>
+                        <option>044</option>
+                    </select>
+                    <input type="text">
+                </p>
+            </fieldset>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<span></span>
+
+요소유형 인라인 요소
+
+span        1. 인라인 요소들을 그룹으로 정의하는 태그입니다
+            요소들을 그룹으로 묶어주는 이유는 div태그처럼 css를 손쉽게 적용하기 위한것
+            2. 텍스트, 인라인요소 포함가능
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>title</title>
+        <style>
+            .s1{
+                background-color: #ccc;
+            }
+            .s2{
+                color: #ff6600
+            }
+        </style>
+    </head>
+    <body>
+        <span class="s1">웹표준</span>과 <span class="s2">웹접근성</span>
+        <div>
+            <a href="#">
+                <span><img src="images/whitestar.jpg" alt="에요"></span>
+                <span class="s2">공기정화식물 화이트스타</span>
+            </a>
+        </div>
+    </body>
+</html>

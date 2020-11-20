@@ -1,0 +1,4 @@
+속성(attribute)이란 무엇인가
+
+<html lang="ko">나 <meta charset="UTF-8"> 처럼
+태그 내부에서 부가적인 설정값을 선언하는것을 속성이라고 한다

@@ -1,0 +1,19 @@
+audio
+
+<audio>     1. html 문서에 음악과 같은 오디오를 삽일할 때 사용되는 태그
+</audio>    2. mp3,wav,ogg 3가지 파일 형식이 있다
+
+속성
+
+src         1. 오디오 파일의 주소입니다
+
+preload     1. html문서가 로드될 때 오디오 파일로드 여부를 판단한다
+            2.none,metadata,auto 값이 있다
+
+autoplay    1. html문서가 로드될때 오디오를 자동 실행한다
+
+muted       1. 오디오 음소거를 한다
+
+loop        1. 오디오를 반복하여 재생
+
+conrols     1. 오디오 컨트롤을 표시한다

@@ -1,0 +1,22 @@
+문단 <p></p>
+
+요소유형 : 블록레벨요소
+
+1. html문서에서 단락(paragraph)을 정의할 때 사용하는 태그
+2. 텍스트와 인라인 요소를 포함가능 블록레벨 포함불가
+3. 텍스트 행을 바꾸려면 br태그를 사용
+
+
+
+
+
+<!Doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 지정하는곳</title>
+    </head>
+    <body>
+        <p>p요소는 텍스트와 인라인 요소를 포함할 수 있지만 같은 블록레벨 요소는<br>포함할 수 없습니다.</p>
+    </body>
+</html>

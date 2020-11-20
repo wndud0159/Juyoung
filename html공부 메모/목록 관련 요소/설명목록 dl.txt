@@ -1,0 +1,28 @@
+설명목록 <dl></dl>
+
+요소유형 : 블록레벨요소
+
+1. Description List의 약자로 용어에 대한 설명 목록을 정의할 때 사용하는 태그
+2. 자식요소로 반드시 dt태그와 dd태그 정의해주어야함 dl > dt > dd 순으로 마크업
+dl태그는 dt dd이외의 태그는 자식요소로x dt,dd을 한쌍으로 묶는 div태그 예외
+
+dt : Description term의 약자로 설명 목록의 용어를 정의
+dd : Description details 의 약자로 용어에 대한 세부 설명을 정의
+
+
+
+<!Doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 지정하는곳</title>
+    </head>
+    <body>
+        <dl>
+            <dt>html</dt>
+            <dd>Hypertext Marup Language</dd>
+            <dt>css</dt>
+            <dd>cascading style sheets</dd>
+        </dl>        
+    </body>
+</html>

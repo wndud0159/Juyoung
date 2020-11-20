@@ -1,0 +1,107 @@
+표생성 table tr td th thead tbody tfoot colgroup
+
+요소유형 : 블록레벨요소
+
+1. 표를 정의할 때 사용하는 태그이며 행(ROW) 열(Column)의 2차원 정보로 구성
+2. 자식요소로 반드시 tr 태그를 정의해주어야 하며 table > tr > td 순으로 마크업
+3. tr태그는 table태그의 자식 요소로 표에서 행을 정의할 떄 사용
+4. th태그는 tr태그의 자식 요소로 표에서 열을 정의할 때 사용
+5. th태그는 제목 역할을 하는 셀을 정의할 때 사용하는 태그
+6. 표의 내용을 기준으로 제목영역 thead, 본문영역tbody 열의요약영역tfoot구분
+7. 표는 tr태그처럼 td나 th태그들을 가로로 묶는 행 그룹은 있지만,
+세로로 묶는 열 그룹은 없습니다 이런 열들을 그룹으로 지정할때
+colgroup, col태그로 정의하여 사용
+
+
+
+
+<!-- 표의 모양을 표현하기 위해서 css사용을 해보자~ 
+table 요소와 td요소에 적용된 css
+1. width: 100% -- 표의 가로길이를 100%로 표현
+2. border-collapse: collapse -- td요소들의 위,아래,좌우 테두리선이 겹치면
+하나의 테두리선으로 표현해줌
+3. border: 1px solid #000 --- td요소에 1px테두리선을 표현-->
+
+
+
+<!Doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 지정하는곳</title>
+        <style>
+            table{
+                width: 100%;
+                border-collapse: collapse;
+            }
+            td{
+                border: 1px solid #000;
+            }
+        </style>
+    </head>
+    <body>
+        <table> <!--표 정의-->
+            <tr> <!--1행-->
+                <td>교과목</td><!--1행1열-->
+                <td>점수</td><!--1행2열-->
+            </tr>
+            <tr><!--2행-->
+                <td>HTML</td><!--2행1열-->
+                <td>93</td><!--2행2열-->
+            </tr>
+            <tr><!--3행-->
+                <td>CSS</td><!--안써도 이제알지-->
+                <td>92</td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 지정하는곳</title>
+        <style>
+            table{
+                width: 100%;
+                border-collapse: collapse;
+            }
+            td{
+                border: 1px solid #000;
+            }
+            .c1{
+                background: #ff0;
+            }
+            .c2{
+                background: #0ff;
+            }
+        </style>
+    </head>
+    <body>
+        <table> <!--표 정의-->
+            <colgroup>
+                <col class="c1">
+                <col class="c2">
+            </colgroup>
+           <tr> <!--1행-->
+                <td>교과목</td><!--1행1열-->
+                <td>점수</td><!--1행2열-->
+            </tr>
+            <tr><!--2행-->
+                <td>HTML</td><!--2행1열-->
+                <td>93</td><!--2행2열-->
+            </tr>
+            <tr><!--3행-->
+                <td>CSS</td><!--안써도 이제알지-->
+                <td>92</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+video
+
+<video>         1. html문서에 동영상을 삽입할 때 사용하는 태그
+</video>        2. mp4,webm,ogg 3가지 파일 형식이 있다
+
+속성
+
+src         1. 영상 파일의 주소
+
+preload     1. html문서가 로드될 때 영상 파일 로드 여부를 판단한다
+            2. none,metadata,auto 값이 있다
+
+autoplay    1. html문서가 로드될 때 영상을 자동으로 실행한다
+
+muted       1. 오디오 음소거를 한다
+
+loop        1. 오디오를 반복하여 재생
+
+conrols     1. 오디오 컨트롤을 표시한다
+
+width       1. 영상의 가로 크기를 지정한다
+
+heigth      1. 영상의 세로 크기를 지정한다
+
+poster      1. 영상의 다운로드 중에 표시되는 이미지입니다
