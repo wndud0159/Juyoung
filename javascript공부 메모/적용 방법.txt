@@ -1,0 +1,36 @@
+적용방법
+
+
+1. 내부 적용
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>html문서의 제목을 정의하는 곳</title>
+        <script>
+            document.write('내부에서 적용하기');
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
+
+-------------------------------------------------
+
+
+2. 외부 적용
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>html문서의 제목을 정의하는 곳</title>
+        <script src="자바스크립트문서.js"></script>
+    </head>
+    <body>
+        
+    </body>
+</html>

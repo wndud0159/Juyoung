@@ -1,0 +1,42 @@
+적용위치
+
+
+1. head 태그 내에서 위치
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>html문서의 제목을 정의하는 곳</title>
+        <script>
+            document.write('내부에서 적용하기');
+        </script>
+        <script src="내부에서적용하기.js"></script>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
+
+-------------------------------------------------
+
+
+2. body 태그 내에서 위치
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>html문서의 제목을 정의하는 곳</title>
+    </head>
+    <body>
+        <script>
+            document.write('내부에서 적용하기');
+        </script>
+        <script src="내부에서적용하기.js"></script>
+    </body>
+</html>
+
+
+그리고 둘다에서도 위치 가능하다~

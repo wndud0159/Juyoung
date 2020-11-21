@@ -1,0 +1,20 @@
+변수 선언 var(variable)
+
+변수는 데이터를 저장하는 장소를 의미한다
+
+
+var num = 10;       
+var str = 'javascript';
+va temp = true
+
+1.  var : 변수 선언을 의미한다
+2.  num,str,temp : 변수를 구분하는 이름(변수명) 이다
+3.  10,javascript,true : 변수에 저장 되는 데이터(값)이다
+
+
+여러개의 변수를 선언할 경우 다음과 같은 방법으로 선언 가능
+var num, str, temp;
+var num = 10, str = 'javascript', temp = true;
+
+
+변수명의 첫 글자에는 숫자나 특수문자가 올 수 없으나 예외적으로 특수문자 중 _나 $는 사용할 수 있다

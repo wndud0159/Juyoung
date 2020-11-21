@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>html문서의 제목을 정의하는 곳</title>
+        <script>
+            function process(kor, eng){
+               
+                var avg = (kor + eng) /2;
+                return avg;
+            }
+            process(90, 80);
+            console.log(process());
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
