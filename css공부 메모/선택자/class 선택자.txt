@@ -1,0 +1,33 @@
+class 선택자
+
+html문서의 여러 요소 중 같은 이름을 갖는 요소들만 모아 따로 속성을 부여할수있다
+즉 여러 개의 요소에 같은 class명을 부여할 수 있다
+또 하나의 요소에 여러 개의 class명을 부여할 수도 있다 
+css 에서는 class 선택자 앞에 .을 붙여야 한다
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style>
+           .btxt{
+                color: red;
+           }
+           .ctxt{
+               color: blue;
+           }
+           .atxt{
+               font-weight: blue;
+           }
+        </style>
+    </head>
+    <body>
+        <p class="btxt">저는 최주영 입니다.</p>
+        <p class="ctxt">저는 최주영 입니다.</p>
+        <p class="ctxt atxt">저는 최주영 입니다.</p>
+    </body>
+</html>
+

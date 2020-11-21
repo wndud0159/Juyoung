@@ -1,0 +1,25 @@
+그룹 선택자
+
+그룹 선택자는 여러 선택자들을 ,로 구분하여 함께 묶어 속성을 부여 한다
+
+다음 예제에서는 h1 과 p요소에 테두리 속성을 한번 부여해볼게유
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style>
+            h1, p{
+                border: 5px solid lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>안녕</h1>
+        <p>하세요</p>
+        <h2>네?</h2>
+    </body>
+</html>
+
+h2는 속성부여 안됐음

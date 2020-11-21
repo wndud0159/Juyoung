@@ -1,0 +1,43 @@
+가상클래스 선택자
+
+가상클래스 선택자란 링크가 걸린 문자에 스타일을 부여하는 것이다
+
+속성값
+
+a:link      링크가 걸린 문자에 속성을 부여하는 선택자
+
+a:visited   링크를 클릭하여 해당 페이지에 갔다가 돌아온 경우의 속성을 부여 선택자
+
+a:hover     링크가 걸린 문자에 마우스가 닿았을 경우 속성을 부여하는 선택자
+            (클릭했다가 돌아왔거나 클릭하려다 만 경우)
+
+a:focus     링크 걸린 글자에 포커스가 생길 경우 속성을 부여하는 선택자 
+            (키보드의 tab 키 등으로 포커스가 나타날 경우)
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style>
+            a{
+                color: dodgerblue
+            }
+            a:hover{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#">아</a></li>
+            <li><a href="#">이</a></li>
+            <li><a href="#">스</a></li>
+            <li><a href="#">크</a></li>
+            <li><a href="#">림</a></li>
+        </ul>
+    </body>
+</html>

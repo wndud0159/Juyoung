@@ -1,0 +1,9 @@
+text-align 문단정렬
+
+left 왼쪽 정렬
+
+center 중앙 정렬
+
+right 오른쪽 정렬
+
+justify 양쪽 정렬

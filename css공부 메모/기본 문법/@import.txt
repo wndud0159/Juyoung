@@ -1,0 +1,27 @@
+@import
+
+@import 는 css안으로 다른 css파일을 불러들일 경우 사용한다
+css맨ㅇ 윗줄에 기술한다
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style type="text/css"> 
+            @import url("style.css");
+        </style>
+    </head>
+    <body>
+        <p>우리를 기쁘게 하는 것들?;;</p>
+    </body>
+</html>
+
+
+ 
+@charset "UTP-8"
+p{
+    color: red;
+}
+이 파일이 따로 있어야함~ 파일명 style.css 여야할듯

@@ -1,0 +1,21 @@
+내부 스타일시트
+
+css를 html 문서 안에 style태그로 기재하여 html문서안에 css가 함께 저장되도록
+하는 형태
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style>
+            p{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p>우리를 기쁘게 하는 것들?;;</p>
+    </body>
+</html>

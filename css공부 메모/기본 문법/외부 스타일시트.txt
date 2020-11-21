@@ -1,0 +1,30 @@
+외부 스타일시트
+
+스타일 속성들을 따로 저장하여 html문서에 파일명으로 연결할 수 있다
+이때 스타일은 *.css확장자를 가진 별도의 파일로 저장하고, html에서는
+link태그를 이용하여 선언
+
+내부 스타일시트는 그 스타일이 기술된 페이지에만 적용되는 반면,
+외부 스타일시트는 그 스타일을 선언한 모든 html페이지에 적용된다
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+       <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <p>우리를 기쁘게 하는 것들?;;</p>
+    </body>
+</html>
+
+
+ 
+@charset "UTP-8"
+p{
+    color: red;
+}
+
+이걸 따로 css 파일을 만들어 link로 불러오는 방법인듯? 
+파일명 style.css 여야할듯

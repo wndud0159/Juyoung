@@ -1,0 +1,58 @@
+가상요소 선택자
+
+가상요소 선택자는 요소에 id명이나 class명을 부여하지 않고도 위치를 찾아서
+선택할 수 있는 선택자
+
+속성 값
+
+:first-letter       요소의 첫 글자
+
+:first-line         요소의 첫 줄
+
+:first-child        같은 요소 중 첫 번째 요소
+
+:last-child         같은 요소 중 마지막 요소
+
+:nth-child(n)       같은 요소 중 n번째 요소
+
+:before             요소 안 맨 앞에 배치될 요소(마크업에는 없는 가상 요소)
+
+:after              요소 안 맨 뒤에 배치될 요소(마크업에는 없는 가상 요소)
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style>
+            p:first-letter{
+                font-size: 150%;
+            }
+            p:first-child{
+                color: blue;
+            }
+            p{
+                background: lightgray;
+            }
+            p:last-child{
+                background: palegoldenrod;
+            }
+            .box:after{
+                content: "항목을 선택해 주세요";
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <div class="box">
+                <p>생</p>
+                <p>선</p>
+                <p>튀</p>
+                <p>김</p>
+            </div>
+        </ul>
+    </body>
+</html>
+

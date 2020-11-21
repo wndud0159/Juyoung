@@ -1,0 +1,13 @@
+background-clip 배경 영역정함
+
+배경의 영역을 정하는 속성
+
+background-clip: border-box;
+
+속성 값
+
+border-box          배경이 테두리를 포함한 영역에 배치(기본값)
+
+padding-box         배경이 테두리를 제외한 안쪽 영역에 배치됨
+
+content-box         배경이 안여백을 제외한 콘텐츠 영역에만 배치됨

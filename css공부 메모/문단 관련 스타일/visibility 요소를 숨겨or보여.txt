@@ -1,0 +1,5 @@
+visibility 요소를 숨겨or보여
+
+visible 요소를 보이도록 함
+
+hidden 요소를 숨김(내용이 있던 자리는 남아 있음)

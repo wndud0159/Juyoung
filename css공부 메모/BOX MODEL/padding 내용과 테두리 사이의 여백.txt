@@ -1,0 +1,15 @@
+padding 내용과 테두리 사이의 여백
+
+요소의 안쪽 여백 즉, 내용과 테두리 사이의 여백을 의미
+
+속성 값
+
+padding: 10px           위쪽, 아래쪽, 왼쪽, 오른쪽 모두 각 10px   // 4개 입력하면 4개 따로 지정가능
+
+padding-top: 10px       위쪽 10px
+
+padding-right: 10px     오른쪽 10px
+
+padding-bottom: 10px    아래쪽 10px
+
+padding-left: 10px      왼쪽 10px

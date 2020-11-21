@@ -1,0 +1,23 @@
+인라인 스타일
+
+인라인 스타일은 태그에 직접 css를 정의해주는 기법
+해당요소에 style="" 형식으로 기술
+외부 내부스타일 기술된 속성보다 우선적으로 적용
+우선순위가 절대적으로 높아야 할 경우에 사용할수 있으나
+스타일을 공통 css로 수정할 수 없고 일일이 html을 열어서 편집해야 하므로
+일반적으로 별로 사용안함 ㅋㅋ
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+    </head>
+    <body>
+        <p style="color:red;">우리를 기쁘게 하는 것들?;;</p>
+    </body>
+</html>
+
+
+ 

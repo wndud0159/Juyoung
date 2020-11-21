@@ -1,0 +1,8 @@
+verrical-align 이미지,폼 정렬
+
+top 위쪽 정렬
+
+middle 세로 중앙 정렬
+
+bottom 아래쪽 정렬
+

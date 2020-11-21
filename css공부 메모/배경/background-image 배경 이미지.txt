@@ -1,0 +1,9 @@
+background-image 배경 이미지
+
+background-image: url(img/bgimg.png)
+
+요소의 배경에 들어갈 이미지를 지정하는 속성
+
+url(~)      이미지 경로와 파일명을 기술함
+
+none        배경 이미지 없음(기본값)

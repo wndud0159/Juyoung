@@ -1,0 +1,3 @@
+text-overflow말줄임기호표시
+
+text-overflow: ellipsis;

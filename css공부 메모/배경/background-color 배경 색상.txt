@@ -1,0 +1,9 @@
+background-color 배경 색상
+
+background-color: #abcdef;
+
+요소의 배경 색상을 지정하는 속성
+
+색상값 - 색상명, HEX값, RGB값, HSL값, RGBA값, HSLA값
+
+transparent     투명(기본값)

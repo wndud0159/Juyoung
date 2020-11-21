@@ -1,0 +1,5 @@
+font-variant 문자작은대문자or원래대로
+
+small-caps; 작은대문자로 설정
+
+normal; 원래대로 설정

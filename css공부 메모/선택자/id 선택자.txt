@@ -1,0 +1,26 @@
+id 선택자
+
+html문서의 요소 중 같은 요소라도 각기 다른이름으로 지정하여 따로 속성을 부여할 수 있다
+css에서는 id 선택자 앞에 #을 붙여야 한다
+id명이나 class명은 숫자로 시작할 수 없으며, 주로 영문자로 시작한다
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style>
+            #ctxt{
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="ctxt">저는 최주영 입니다.</p>
+    </body>
+</html>
+
+
+ 
+파란글씨로 나온다

@@ -1,0 +1,9 @@
+background-position 배경이미지위치옮김
+
+배경 이미지를 원하는 위치로 옮겨주는 속성
+
+background-position: 50% top;
+
+가로위치    left, right, center, px값, %값 등 (기본값 left)
+
+세로위치    top, bottom, center(middle아님), px값, %값 등 (기본값 top)

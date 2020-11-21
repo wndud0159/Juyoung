@@ -1,0 +1,12 @@
+box-sizing 
+
+박스의 크기가 여백과 테두리를 포함해도 원래 크기를 넘지 않도록 하기위한 속성
+
+box-sizing: border-box;
+
+
+속성 값
+
+content-box         요소의 전체크기에 padding,border 값을 포함시킴
+
+border-box          요소의 전체크기에 padding,border 값을 포함시키지 않음

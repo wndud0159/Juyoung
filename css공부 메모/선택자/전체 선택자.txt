@@ -1,0 +1,26 @@
+전체 선택자
+
+전체 선택자는 페이지의 모든 요소를 가리키는 선택자로서 *표시합니다
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style>
+            *{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>입고 신고 쓰고 끼는 것들..</h2>
+        <ul>
+            <li>옷</li>
+            <li>신발</li>
+            <li>쓸거없었나 이런 예제문장을...</li>
+        </ul>
+    </body>
+</html>

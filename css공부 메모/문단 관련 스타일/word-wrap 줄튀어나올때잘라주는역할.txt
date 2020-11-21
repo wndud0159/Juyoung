@@ -1,0 +1,3 @@
+word-wrap 줄튀어나올때잘라주는역할
+
+word-wrap: break-word;

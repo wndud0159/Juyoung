@@ -1,0 +1,9 @@
+text-decoration 글자 밑줄,윗줄,가운데줄
+
+underline 밑줄
+
+overline 윗줄
+
+line-through 가운데줄
+
+none 줄없음

@@ -1,0 +1,7 @@
+word-break 줄끝에서단어끊기
+
+normal 기본값
+
+break-all 글자가 넘치면 줄바꿈
+
+keep-all 단어를 끊어 줄바꿈을 하지 않음

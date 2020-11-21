@@ -1,0 +1,15 @@
+margin 테두리와 다음박스 사이의 여백
+
+요소의 바깥 여백 즉, 테두리와 다음 박스 사이의 여백을 의미
+
+속성 값
+
+margin: 10px            위쪽,아래,왼,오 모두 각 10px // 마찬가지로 4개 입력하면 따로 지정가능
+
+margin-top: 10px        위쪽 10px
+
+margin-bottom: 10px     아래쪽 10px
+
+margin-left: 10px       왼쪽 10px
+
+margin-right: 10px      오른쪽 10px

@@ -1,0 +1,25 @@
+type 선택자
+
+html문서의 태그 이름을 선택자로 사용할 수 있다
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style>
+            p{
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <p>저는 최주영 입니다.</p>
+    </body>
+</html>
+
+
+ 
+파란글씨로 나온다

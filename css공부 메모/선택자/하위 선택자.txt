@@ -1,0 +1,33 @@
+하위 선택자
+
+하위 선택자는 요소 내부에 있는 모든 해당 요소를 가르키며,
+선택자 사이를 공백으로 분리합니다
+
+이 예제는 abox 클래스 내부에 있는 모든 p태그들의 문자를 파란색으로 표시하도록
+속성을 부여해볼게유
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style>
+            .abox{
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="abox">
+            <p>7월 여행</p>
+            <p>8월 여행</p>
+            <ul>
+                <li>1주차 여행</li>
+                <li>2주차 여행</li>
+            </ul>
+        </div>
+        <p>내년의 여행</p>
+    </body>
+</html>
+

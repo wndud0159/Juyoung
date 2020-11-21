@@ -1,0 +1,36 @@
+자식 선택자
+
+자식 선택자는 요소 내부에 있는 해당 요소를 가리키지만,
+하위 요소의 하위 요소는 가리키지 않으며 선택자 사이를 >로 분리한다
+
+이번예제에서는 abox 클래스 내부에있는 요소들 중 또 다른 하위 요소 ul안에
+있는 p태그들을 제외한 나머지 p태그들의 문자만을 파란색으로 표시하도록
+속성 부여 해볼게유
+
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTP-8">
+        <title>html문서의 제목을 정의하는곳</title>
+        <style>
+            .abox > p{
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="abox">
+            <p>7월 여행</p>
+            <p>8월 여행</p>
+            <ul>
+                <li>1주차 여행</li>
+                <li>2주차 여행</li>
+            </ul>
+        </div>
+        <p>내년의 여행</p>
+    </body>
+</html>
+
+
+ 이러면 p만 파란색으로 나오더라,,

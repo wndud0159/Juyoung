@@ -1,0 +1,11 @@
+background-origin 배경 이미지시작점
+
+background-origin: border-box;
+
+속성값
+
+border-box          배경 이미지 테두리의 좌측 상단 모퉁이에서 시작함
+
+paddong-box         배경 이미지가 안여백의 좌측 상단 모퉁이에서 시작함(기본값)
+
+content-box         배경 이미지가 콘텐츠의 좌측 상단부터 시작함

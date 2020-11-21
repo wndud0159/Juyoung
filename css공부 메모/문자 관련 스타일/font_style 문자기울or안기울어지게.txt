@@ -1,0 +1,5 @@
+font_style 문자기울or안기울어지게
+
+italic; 기울
+
+normal; 안기울

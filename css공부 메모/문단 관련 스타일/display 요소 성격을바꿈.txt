@@ -1,0 +1,10 @@
+display 요소 성격을바꿈
+
+block	inline요소의 성격을 block으로 변경 > 줄바꿈 일어남
+
+inline	block요소의 성격을 inline으로 변경 > 줄바꿈 안일어남
+
+inline-block 	inline요소의 성격을 inline-block으로 변경 > 줄바꿈 안일어나지만,
+		block요소만 사용할 수 있는 text-align 등이 속성들을 사용할 수 있게됨
+
+none	요소를 보이지 않게 숨기고 흔적도 숨김

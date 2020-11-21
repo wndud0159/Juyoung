@@ -1,0 +1,7 @@
+font-weight 문자굵게or보통
+
+font-weight: bold;
+굵은 문자로 설정
+
+font-weight:nomal;
+보통 문자로 설정

@@ -1,0 +1,11 @@
+background-attachment 배경 이미지고정
+
+배경 이미지를 요소 내에 고정시킬지 화면에 고정시킬지에 대한 속성
+
+background-attachment: fixed;
+
+속성값
+
+scroll          배경 이미지가 요소 바닥에 붙은 것처럼 화면을 스크롤하면 따라감(기본값)
+
+fixed           배경 이미지가 화면 바닥에 붙은 것처럼 화면을 스크롤해도 따라가지 않음
