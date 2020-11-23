@@ -1,0 +1,52 @@
+이벤트 연결
+
+jquery에서 이벤트를 연결하는 방법에는 
+(요소에 직접 연결하는 방식)
+(이벤트 메서드를 이용해서 연결하는 방식)
+이 있다
+
+---------------------------------------------------
+
+1. 요소에 이벤트 직접 연결 형식
+
+$(selector).이벤트(function(){
+    ....
+});
+
+
+*****
+$("button").click(function(){
+    console.log("이벤트 연결")
+});
+
+
+*****
+$("span").hover(function(){
+    $(this).addClass("on");
+}, function(){
+    $(this).removeClass("on")
+});
+
+
+------------------------------------------------------
+
+
+2. 이벤트 메서드를 이용해서 연결하는 형식
+
+*on()
+$("button").on("click",function(){
+    console.log("이벤트 연결")
+});
+button 요소에 click 이벤트를 연결한다
+
+
+*off()
+$("button").off("click");
+연결된 이벤트를 제거한다
+
+
+*one()
+$("button").one("click", function(){
+    console.log("이벤트 연결")
+});
+이벤트를 한번만 연결한다

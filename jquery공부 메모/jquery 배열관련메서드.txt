@@ -1,0 +1,29 @@
+jquery 배열관련메서드
+
+jquery의 배열 메서드를 이용하면 배열이나 객체에 쉽게 접근할 수 있다
+
+* $.each() 메서드
+
+$.each(배열명 또는 객체명, function(index, value) {
+    .....
+});
+
+
+
+var city = {"서울", "대구", "대전", "부산"};
+$each(city, function(index value){
+    console.log(index);  // 0 1 2 3
+    console.log(value);  // 서울 대구 대전 부산 
+});
+
+
+
+var subjectinfo = {
+    subject: "html",
+    grade: 1,
+    days: 20
+};
+$each(subjectinfo, function(key, value){
+    console.log(key); // subject grade days
+    console.log(value) // html 1 20
+});

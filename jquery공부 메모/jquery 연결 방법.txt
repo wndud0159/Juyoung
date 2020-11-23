@@ -1,0 +1,29 @@
+jquery 연결방법
+
+1. download 방식
+https://jquery.com/download에 접속하여 download the compressed, production jquery 3.3.1 을 다운로드
+
+* html문서에 jquery 라이브러리 연결하기
+html문서를 jquery 라이브러리와 같은 경로에 저장합니다 잘 연결되었는지 jquery명령어를 입력해 확인
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        console.log("jquery 시작");
+    });
+</script>
+
+
+2.CDN 방식
+https://code.jquery.com 사이트에 접속하여 jQuery Core 3.3.1 - minified 번전을 선택하고 CDN을 카피한다
+
+*html문서에 jquery 라이브러리 연결하기
+html문서를 jquery 라이브러리와 같은 경로에 저장합니다 잘 연결되었는지 jquery명령어를 입력해 확인
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        console.log("jquery 시작");
+    });
+</script>

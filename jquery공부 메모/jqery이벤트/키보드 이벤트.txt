@@ -1,0 +1,10 @@
+키보드 이벤트
+
+이벤트 종류
+
+keydown()       키보드를 누를 때 이벤트가 발생
+
+keypress()      keydown() 이벤트와 유사하지만 alt ctrl shift esc 와
+                같은 특수키는 이벤트가 발생하지 않는다
+
+keyup()         키보드를 떼었을 때 이벤트가 발생
