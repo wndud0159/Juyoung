@@ -1,0 +1,50 @@
+이벤트 연결
+
+이벤트를 연결하는 방식에는
+(인라인 이벤트 모델)
+(기본 이벤트 모델)
+(표준 이벤트모델)
+이 있으며 앞에 on 을 붙여줍니다
+
+
+1. 인라인 이벤트 모델
+인라인 이벤트 모델은 html요소에 직접 이벤트를 연결하는 방식
+<body>
+    <button onclick='console.log("ok");'>클릭</button>
+</body>
+
+
+2. 기본 이벤트 모델
+기본 이벤트 모델은 html요소를 취득한 후 이벤트를 '객체의 메서드 형식'으로 연결하는 방식
+<body>
+    <button id="bt">클릭</button> <!--취득할 요소-->
+    <script>
+        var bt = document.getElementByid('bt'); // 요소 취득 명령어
+        bt.onclic = function(){
+            console.log("ok"); // ok
+        };
+    </script>
+</body>
+
+
+3. 표준 이벤트 모델
+표준 이벤트 모델은 객체.addEventListener('이벤트',함수)의 방식으로 이벤트 연결
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>html문서의 제목을 정의하는 곳</title>
+       <script>
+        window.onload = function(){
+            var bt = document.getElementByid('bt');
+            function view(){
+                console.log('ok');
+            }
+        bt.addEventListener('click', view); // 이벤트에 on을 붙이지 않습니다 
+        };
+        </script>
+    </head>
+    <body>
+        <button id="bt">클릭</button>
+    </body>
+</html>
