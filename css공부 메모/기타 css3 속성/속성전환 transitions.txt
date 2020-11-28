@@ -1,0 +1,38 @@
+속성전환 transitions
+
+css3에서는 background, color, height, width, transformation등의
+속성 값을 지정한 시간동안 부드럽게 변경할 수 있다
+
+색상을 2초 동안 전환시키기 위해 설정하려면 적어도 두 가지 속성이 필요하다
+transition-property: color;      글자색상 속성을 전환하도록 설정
+transition-duration: 2s;         2초 동안 전환되도록 설정
+
+거기에 효과를 더하고 싶다면 두 가지 속성을 더 추가할 수 있다
+transition-timing-function: ease-in;       변화의 속도는 점점 빨라지게 설정
+transition-delay: 1s;                      1초 기다렸다가 변화가 시작되도록 설정
+
+그리고 변화가 일어나게 하려면 원하는 선택자에 전환될 글자 색상 속성을 부여한다
+a:hover {
+  color: red;
+}
+
+
+transition-timing-function에는 속도 변화를 지정하는데 큰차이를 느끼기
+어렵지만 다음과 같은 항목들이 있다
+
+linear            등속,cubic-bezier(0,0,1,1)
+
+ease              느린 시작으로 전환 효과를 지정한 다음에 빠르게 실행한 다음
+                  천천히 종료, cubic-bezier(0.25,0.1,0.25,1)와 같음(기본값)
+
+ease-in           점점 빨라짐, cubic-bezier(0.42,0,1,1)와 같음
+
+ease-out          점점 느려짐, cubic-bezier(0,0,0.58,1)와 같음
+
+ease-in-out       느린시작과 끝으로 효과를 지정, cubic-bezier(0.42,0,0.58,1) 같음
+
+cubic-bezier(n,n,n,n)   값을 입력하여 가속/감속을 지정
+
+두 개의 속성을 동시에 전활할 때 한줄로 표현할 수 있다
+
+transition: width 1s, color 1s;

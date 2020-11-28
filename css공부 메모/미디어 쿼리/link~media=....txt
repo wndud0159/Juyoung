@@ -1,0 +1,2 @@
+<link rel="stylesheet" type="text/css" media="all and (min-width: 1000px)" href="style_pc.css">
+최소 가로폭이 1000px, 즉 1000px보다 넓은 해상도일 때에 style_pc.css를 연결한다는 뜻

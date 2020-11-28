@@ -1,0 +1,68 @@
+애니메이션animation
+
+애니메이션을 사용하여 요소가 한 스타일에서 다른 스타일로 점진적으로
+변경할 수 있도록 한다 
+원하는 만큼 많은 css 속성ㅇㄹ 변경할 수 있는데
+먼저 애니메이션의 일부 키프레임을 지정해야 한다
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>애니메이션</title>
+  <style>
+    @keyframes sample{
+      0% {background: firebrick; transform: translate(0,0);}
+      50%{background: cornflowerblue; transform: translate(30px, 20px);}
+      100%{background: forestgreen; transform: translate(0,0);}
+    }
+    
+    p{
+      width: 100px; height: 100px; 
+      padding: 10px; background: firebrick;
+      animation-name: sample;
+      animation-duration: 4s;
+      animation-fill-mode: forwards;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    Animation..
+  </p>
+</body>
+</html>
+
+1. sample 애니메이션의 키프레임을 세 지점 선언
+2. 첫 번째 키프레임 : 배경색은 firebrick, 위치는 변경없음
+3. 두 번째 키프레임 : 배경색은 cornflowerblue, 위치는 가로30px 세로 20px지점 변경
+4. 세 번째 키프레임 : 배경색은 forestgreen, 위치는 원래 위치로 변경
+5. p 요소의 애니메이션을 smaple 이라고 등록된 키프레임으로 설정
+6. 애니메이션 기간은 4초 동안
+7. 애니메이션 끝나고 나면 마지막 속성 유지
+
+
+animation-delay     속성은 애니메이션의 시작에 대한 지연을 지정
+animation-delay: 2s;  2초 지연
+
+animation-iteration-count     속성은 애니메이션이 실행 횟수를 지정or 계속반복
+animation-iteration-count: infinite; 영원히 계속반복한다
+
+animation-direction   속성은 애니메이션의 재생을 방향을 지정or 변경
+속성값
+normal    순방향 재생(기본값)
+reverse   역방향 재생
+alternate           순방향<->역방향 순을 지그재그 재생(infinite인 경우 실행됨)
+alternate-reverse   역방향<->순방향 순을 지그재그 재생(infinite인 경우 실행됨)
+
+animation-timing-function 속성은 애니메이션의 속도 곡선을 지정or변경
+animation-timing-function: ease;
+animation-timing-function 속성의 값은 속성전환의 transition-timing-function 과 같다
+
+
+
+이 속성들을 한 줄로 표기 가능
+
+animation: sample 5s linear 2s infinite alternate;
+sample 애니메이션을 5초동안, 등속으로, 2초기다렸다가, 영원히, 지그개그로 재생하라는 의미
+
