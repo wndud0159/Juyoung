@@ -1,0 +1,40 @@
+재귀 함수
+
+재귀 함수는 함수 안에서 자신의 함수를 다 시 호출하는 함수
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>재귀 함수</title>
+  <script>
+    function factorial(n){
+      if(n === 0){
+        console.log('호출 끝');
+      }else{
+        console.log('호출' + n);
+        factorial(n-1);
+      }
+    }
+    factorial(10);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
+
+
+console 값
+호출10
+Sample.html:16 호출9
+Sample.html:16 호출8
+Sample.html:16 호출7
+Sample.html:16 호출6
+Sample.html:16 호출5
+Sample.html:16 호출4
+Sample.html:16 호출3
+Sample.html:16 호출2
+Sample.html:16 호출1
+Sample.html:14 호출 끝

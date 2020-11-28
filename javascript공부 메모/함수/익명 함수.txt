@@ -1,0 +1,31 @@
+익명 함수
+
+익명 함수는 변수에 함수 데이터를 저장하여 변수를 마치 함수처럼 사용 할 수
+있도록 만들어 준다
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>익명 함수</title>
+  <script>
+   //compute();  이렇게 변수 선언 이전에 호출 x
+    var compute = function(){
+      var x = 0.5;
+      var y = 10;
+      var result = x * y;
+      console.log(result);
+    };
+    compute();  // 익명 함수는 변수 선언 이전에 함수를 호출 할 수 없다 
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
+
+console 값
+5
+
