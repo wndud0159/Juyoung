@@ -1,0 +1,92 @@
+사용자 정의 객체
+
+객체는 객체리터럴(object literal)과 객체생성자함수(object constructor function)로
+만들 수 있다
+
+1. 객체 리터럴(object literal)
+
+var 변수 = {프로퍼티: 값, 프로퍼티: 값, 메서드: function(){},...}
+
+<!DOCTYPE html>
+<html>
+  <head lang="ko">
+    <meta charset="utf-8">
+    <title>객체를 배워보자</title>
+    <script>
+      var info = {
+        subject: 'css',
+        credit: 1,
+        printOut: function(){
+          return info.subject + ', ' + info.credit + '학점';
+        }
+      };
+      console.log(info.subject); // css
+      console.log(info.credit); // 1
+      console.log(info.printOut()); // css, 1학점
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+
+
+객체 리터럴의 속성 추가, 삭제, 변경 방법
+var info = {
+  subject: 'css',
+  credit: 1,
+  printOut: function(){
+    return this.subject + ', ' + this.credit + '학점';
+  }
+};
+
+info.days = 20; // 속성 추가
+console.log(info.days); // 20
+
+delete info.credit // 속성 삭제
+console.log(info.credit); // underfined
+
+info.printOut = function(){ //속성 변경
+  return this.subject + ', ' + this.days + '일';
+};
+console.log(info.printOut()); // css, 20일
+
+
+
+2. 객체 생성자 함수(object constructor function)
+
+function 함수(매개변수1, 매개변수2){
+  this.프로퍼티 = 매개변수1;
+  this.프로퍼티 = 매개변수2;
+  this.메서드 = function(){
+  };
+}
+var 변수 = new 함수(매개변수1 값, 매개변수2 값);
+
+
+<!DOCTYPE html>
+<html>
+  <head lang="ko">
+    <meta charset="utf-8">
+    <title>객체를 배워보자</title>
+    <script>
+      function Info(subject, credit) {
+        this.subject = subject;   
+        this.credit = credit;
+        this.printOut = function(){
+          return this.subject + ' ,' + this.credit + '학점';
+        };
+      };
+      var sub1 = new Info('html', 1); // 생성자 함수는 일반 함수와 차이를 두기 위해 함수명의 첫 문자를 대문자로 표현한다
+      console.log(sub1.subject); // html
+      console.log(sub1.credit); // 1
+      console.log(sub1.printOut()); // html, 1학점
+
+      var sub2 = new Info('css', 2); // info 함수안에 this는 함수를 통해 생성되는 객체를 의미한다
+      console.log(sub2.subject); // css
+      console.log(sub2.credit); // 2
+      console.log(sub2.printOut()); // css, 2학점
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

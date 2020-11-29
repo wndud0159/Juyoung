@@ -1,0 +1,33 @@
+prototype
+
+객체의 메서드를 생성자 함수내에 정의하지 않고도 생성된 객체에서 호출하여 사용가능
+
+
+<!DOCTYPE html>
+<html>
+  <head lang="ko">
+    <meta charset="utf-8">
+    <title>객체를 배워보자</title>
+    <script>
+      function Triangle(base, height){
+        this.base = base;
+        this.height = height;
+      };
+      
+      Triangle.prototype.area = function(){
+        return this.base * this.height /2;
+      };
+
+      Triangle.prototype.printOut = function(){
+        return '밑변:' + this.base + '높이:' + this.height + '넓이:' + this.area();
+      };
+      
+      var triangle1 = new Triangle(30, 20);
+      console.log(triangle1.area()); //300
+      var triangle2 = new Triangle(80, 40);
+      console.log(triangle2.printOut()); //밑변:80높이:40넓이:1600
+</script>
+  </head>
+  <body>
+  </body>
+</html>

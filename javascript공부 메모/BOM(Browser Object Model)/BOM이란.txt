@@ -1,0 +1,2 @@
+Browser Object Model
+웹 브라우저와 관련된 객체의 집합이다

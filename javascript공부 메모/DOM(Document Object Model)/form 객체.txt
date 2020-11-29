@@ -1,0 +1,37 @@
+form 객체
+
+form객체는 document객체의 하위 객체 중 하나이다
+form객체를 이용하면 form유효성 검사 등과 같은 여러가지
+form요소에 관련된 작업을 수행할 수 있다
+
+
+1. form객체의 선택 방법
+form 객체에서는 name 속성으로 form요소들을 선택한다
+
+document.폼명.요소명
+document.forms[index].elements[index]
+document.forms[index][index] 
+document.forms['폼명'].elements['요소명']
+document.forms['폼명']['요소명']
+
+
+2. form 객체 프로퍼티 및 메서드
+
+속성값
+value         input, textarea요소의 value값을 반환한다
+
+checked       checkbox나 radio가 체크되어 있으면 true, 아니면 false 반환
+
+disabled      요소가 활성화 상태이면 false 비활성화 상태이면 true 반환
+
+defaultValue  초기 성정 값을 반환
+
+length        요소의 개수를 반환
+
+focus()       요소에 포커스를 맞춘다
+
+blur()        요소에서 포커스를 없애준다
+
+submit()      form의 요소 값들을 전송한다
+
+reset()       form의 요소 값들을 초기화한다

@@ -1,0 +1,15 @@
+navigator 객체
+
+브라우저 버전이나 브라우저명 등 브라우저 정보에 관한 객체
+
+프로퍼티
+
+appCodeName         브라우저의 코드명을 반환한다
+
+appName             브라우저명을 반환한다
+
+appVersion          브라우저의 버전을 반환한다
+
+platform            플랫폼명을 반환한다
+
+userAgent           브라우저의 코드명과 버전을 반환한다

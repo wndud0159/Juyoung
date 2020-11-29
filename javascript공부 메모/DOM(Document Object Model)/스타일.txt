@@ -1,0 +1,19 @@
+스타일
+자바스크립트 스타일 형식
+요소.style.속성 = '속성값'
+
+
+자바스크립트 스타일 속성과 css 기본 속성의 형식은 같지만 border-color의 경우 자바스크립트 스타일속성
+에서는 -을 사용할 수 없어 borderColor와 같이 카멜 기법을 사용한다
+
+
+css
+background-color
+border-botton-width
+margin-top
+
+
+자바스크립트
+backgroundColor
+borderBottonWidth
+marginTop

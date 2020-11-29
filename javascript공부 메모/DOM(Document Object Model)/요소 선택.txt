@@ -1,0 +1,32 @@
+요소 선택
+
+요소를 직접 선택하는 메서드
+
+getElementById()           document.getElementById('content')일 경우 HTML요소 중
+                          id속성이 content인 요소를 선택한다
+
+getElementsByClassName()   document.getElementsByClassName('menu')일 경우 HTML요소 중
+                          class명이 menu인 요소들을 선택한다
+
+getElementsByTagName()     document.getElementsByTagName('ul')일 경우 HTML요소 중 태그명이
+                          ul인 요소들을 선택한다
+
+getElementsByName()        document.getElementsByName('txt')일 경우 HTML요소 중 name명이 
+                          txt인 요소들을 선택한다
+
+querySelector()            요소의 선택 방법이 css선택 방법과 같다
+                          선택된 요소 중 첫 번째 요소만 선택 한다
+                          document.querySelector('.lnb')
+                          document.querySelector('div')
+                          document.querySelector('#gnb li')
+
+querySelectorAll()         querySelector()는 선택된 요소 중 첫 번째 요소만 선택하는 반면
+                          모든 요소를 선택한다
+
+querySelectorAll()로 요소를 선택했을 경우 모든 요소가 선택되기 때문에 변수에 배열로 저장이된다
+
+변수에 저장된 요소들은 배열선택 방법과 item()메서드를 이용하여 개변 선택할 수 있다
+
+var list2 = document.querySelecetorAll('#box2 > ul > li');
+list2[0].style.background = "#ccc";
+list2.item(1).style.background = "#ddd";
